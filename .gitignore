@@ -1,0 +1,12 @@
+.venv
+__pycache__/
+anaconda_projects/
+.ipynb_checkpoints
+.DS_Store
+mlruns/
+data/
+models/
+*.joblib
+*.pkl
+*.csv
+*.png
