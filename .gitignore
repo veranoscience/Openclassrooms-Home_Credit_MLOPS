@@ -7,6 +7,4 @@ mlruns/
 data/
 models/
 *.joblib
-*.pkl
 *.csv
-*.png
