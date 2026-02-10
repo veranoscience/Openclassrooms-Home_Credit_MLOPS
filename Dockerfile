@@ -8,10 +8,11 @@ RUN apt-get update \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
-
 #installer deps
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir uv
+
+COPY pyproject.toml uv.lock /app/
+RUN uv sync --frozen --no-dev
 
 # copier le cod + artifacts
 COPY src ./src
@@ -20,4 +21,4 @@ ENV PYTHONPATH=/app/src
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
