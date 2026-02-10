@@ -5,15 +5,13 @@ WORKDIR /app
 # deps système
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-#copier les fichiers de dépendances (uv)
-COPY pyproject.toml uv.lock ./
+COPY requirements.txt .
 
-#installer uv+ deps
-RUN pip install --no-cache-dir uv \
- && uv export --format requirements-txt --locked --no-dev -o requirements.txt \
- && pip install --no-cache-dir -r requirements.txt
+#installer deps
+RUN pip install --no-cache-dir -r requirements.txt
 
 # copier le cod + artifacts
 COPY src ./src
