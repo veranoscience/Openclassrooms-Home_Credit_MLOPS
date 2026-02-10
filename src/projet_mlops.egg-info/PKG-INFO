@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: projet-mlops
+Version: 0.1.0
+Summary: Skeleton MLOps: EDA, API FastAPI, tests, CI/CD
+Author: Ksenia Dautel
+Requires-Python: <3.14,>=3.11
+Requires-Dist: pandas>=2.2
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: uvicorn[standard]>=0.38
+Requires-Dist: joblib>=1.4
+Requires-Dist: pydantic>=2.8
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: fastapi>=0.128.6
+Requires-Dist: xgboost>=3.1.3

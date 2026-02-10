@@ -1,0 +1,11 @@
+pyproject.toml
+src/app/__init__.py
+src/app/main.py
+src/app/schemas.py
+src/projet_mlops.egg-info/PKG-INFO
+src/projet_mlops.egg-info/SOURCES.txt
+src/projet_mlops.egg-info/dependency_links.txt
+src/projet_mlops.egg-info/requires.txt
+src/projet_mlops.egg-info/top_level.txt
+tests/test_health.py
+tests/test_predict.py

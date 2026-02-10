@@ -17,7 +17,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi import Response
 
-from src.app.schemas import (
+from app.schemas import (
     PredictRequest,
     PredictResponse,
     HealthResponse,
