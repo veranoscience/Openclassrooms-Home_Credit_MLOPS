@@ -1,0 +1,4646 @@
+{
+  "n_rows": 50000,
+  "n_cols": 512,
+  "cols": {
+    "NAME_CONTRACT_TYPE": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "Cash loans": 0.90448,
+        "Revolving loans": 0.09552
+      }
+    },
+    "CODE_GENDER": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "F": 0.65794,
+        "M": 0.34206
+      }
+    },
+    "FLAG_OWN_CAR": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "N": 0.65788,
+        "Y": 0.34212
+      }
+    },
+    "FLAG_OWN_REALTY": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "Y": 0.69156,
+        "N": 0.30844
+      }
+    },
+    "CNT_CHILDREN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.42094,
+      "std": 0.7301507918256174,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.0
+    },
+    "AMT_INCOME_TOTAL": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 168433.62474329997,
+      "std": 109883.51033697539,
+      "q05": 67500.0,
+      "q50": 148500.0,
+      "q95": 337500.0
+    },
+    "AMT_CREDIT": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 598363.70346,
+      "std": 399843.2289156837,
+      "q05": 135000.0,
+      "q50": 513531.0,
+      "q95": 1350000.0
+    },
+    "AMT_ANNUITY": {
+      "missing_rate": 6e-05,
+      "type": "numeric",
+      "mean": 27098.170330219815,
+      "std": 14428.102350840012,
+      "q05": 9000.0,
+      "q50": 24925.5,
+      "q95": 53248.5
+    },
+    "AMT_GOODS_PRICE": {
+      "missing_rate": 0.00092,
+      "type": "numeric",
+      "mean": 537934.1051667534,
+      "std": 367031.892169054,
+      "q05": 135000.0,
+      "q50": 450000.0,
+      "q95": 1305000.0
+    },
+    "NAME_TYPE_SUITE": {
+      "missing_rate": 0.004,
+      "type": "categorical",
+      "top_values": {
+        "Unaccompanied": 0.80826,
+        "Family": 0.13146,
+        "Spouse, partner": 0.03604,
+        "Children": 0.01088,
+        "Other_B": 0.00568,
+        "<<NA>>": 0.004,
+        "Other_A": 0.00278,
+        "Group of people": 0.0009
+      }
+    },
+    "NAME_INCOME_TYPE": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "Working": 0.5141,
+        "Commercial associate": 0.23632,
+        "Pensioner": 0.18028,
+        "State servant": 0.06916,
+        "Student": 0.0001,
+        "Unemployed": 2e-05,
+        "Maternity leave": 2e-05
+      }
+    },
+    "NAME_EDUCATION_TYPE": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "Secondary / secondary special": 0.70886,
+        "Higher education": 0.2435,
+        "Incomplete higher": 0.03484,
+        "Lower secondary": 0.01236,
+        "Academic degree": 0.00044
+      }
+    },
+    "NAME_FAMILY_STATUS": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "Married": 0.64064,
+        "Single / not married": 0.14756,
+        "Civil marriage": 0.09606,
+        "Separated": 0.06306,
+        "Widow": 0.05268
+      }
+    },
+    "NAME_HOUSING_TYPE": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "House / apartment": 0.88744,
+        "With parents": 0.04762,
+        "Municipal apartment": 0.03732,
+        "Rented apartment": 0.01566,
+        "Office apartment": 0.00816,
+        "Co-op apartment": 0.0038
+      }
+    },
+    "REGION_POPULATION_RELATIVE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.02088645535999999,
+      "std": 0.013811384284971756,
+      "q05": 0.00496,
+      "q50": 0.01885,
+      "q95": 0.04622
+    },
+    "DAYS_REGISTRATION": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -5019.29342,
+      "std": 3522.3083400357714,
+      "q05": -11439.05,
+      "q50": -4539.5,
+      "q95": -341.0
+    },
+    "DAYS_ID_PUBLISH": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -2989.33884,
+      "std": 1513.6364599645826,
+      "q05": -4944.0,
+      "q50": -3254.0,
+      "q95": -378.0
+    },
+    "FLAG_MOBIL": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.0,
+      "std": 0.0,
+      "q05": 1.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "FLAG_EMP_PHONE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.8197,
+      "std": 0.38444097843143354,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "FLAG_WORK_PHONE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.20166,
+      "std": 0.4012436470890058,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "FLAG_CONT_MOBILE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.9985,
+      "std": 0.038701162199591785,
+      "q05": 1.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "FLAG_PHONE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.27942,
+      "std": 0.4487187209932425,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "FLAG_EMAIL": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.05682,
+      "std": 0.23150066836013458,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "OCCUPATION_TYPE": {
+      "missing_rate": 0.31194,
+      "type": "categorical",
+      "top_values": {
+        "<<NA>>": 0.31194,
+        "Laborers": 0.18168,
+        "Sales staff": 0.10572,
+        "Core staff": 0.08798,
+        "Managers": 0.07122,
+        "Drivers": 0.05888,
+        "High skill tech staff": 0.0376,
+        "Accountants": 0.0308,
+        "Medicine staff": 0.02752,
+        "Security staff": 0.02204
+      }
+    },
+    "CNT_FAM_MEMBERS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.15764,
+      "std": 0.9171512709084988,
+      "q05": 1.0,
+      "q50": 2.0,
+      "q95": 4.0
+    },
+    "REGION_RATING_CLIENT": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.05268,
+      "std": 0.5096960009655441,
+      "q05": 1.0,
+      "q50": 2.0,
+      "q95": 3.0
+    },
+    "REGION_RATING_CLIENT_W_CITY": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.03252,
+      "std": 0.5035350241546371,
+      "q05": 1.0,
+      "q50": 2.0,
+      "q95": 3.0
+    },
+    "WEEKDAY_APPR_PROCESS_START": {
+      "missing_rate": 0.0,
+      "type": "categorical",
+      "top_values": {
+        "TUESDAY": 0.17628,
+        "WEDNESDAY": 0.16788,
+        "MONDAY": 0.1655,
+        "THURSDAY": 0.1643,
+        "FRIDAY": 0.16234,
+        "SATURDAY": 0.10962,
+        "SUNDAY": 0.05408
+      }
+    },
+    "HOUR_APPR_PROCESS_START": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 12.07124,
+      "std": 3.266321821187372,
+      "q05": 7.0,
+      "q50": 12.0,
+      "q95": 17.0
+    },
+    "REG_REGION_NOT_LIVE_REGION": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.01486,
+      "std": 0.12099369070106006,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "REG_REGION_NOT_WORK_REGION": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0514,
+      "std": 0.22081443607767953,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "LIVE_REGION_NOT_WORK_REGION": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.04172,
+      "std": 0.19995059691039707,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "REG_CITY_NOT_LIVE_CITY": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.07708,
+      "std": 0.26672100854999786,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "REG_CITY_NOT_WORK_CITY": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.22982,
+      "std": 0.42072117575201096,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "LIVE_CITY_NOT_WORK_CITY": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.17958,
+      "std": 0.3838410742474099,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "ORGANIZATION_TYPE": {
+      "missing_rate": 0.18028,
+      "type": "categorical",
+      "top_values": {
+        "Business Entity Type 3": 0.22088,
+        "<<NA>>": 0.18028,
+        "Self-employed": 0.12614,
+        "Other": 0.05378,
+        "Medicine": 0.03718,
+        "Business Entity Type 2": 0.03422,
+        "Government": 0.03324,
+        "School": 0.02896,
+        "Trade: type 7": 0.02514,
+        "Construction": 0.02278
+      }
+    },
+    "EXT_SOURCE_1": {
+      "missing_rate": 0.56646,
+      "type": "numeric",
+      "mean": 0.5019811808061451,
+      "std": 0.2113782329521653,
+      "q05": 0.15643133340880294,
+      "q50": 0.5083951467184704,
+      "q95": 0.8299605389006384
+    },
+    "EXT_SOURCE_2": {
+      "missing_rate": 0.0018,
+      "type": "numeric",
+      "mean": 0.5129662665671523,
+      "std": 0.19180703490141635,
+      "q05": 0.12922536493820416,
+      "q50": 0.5659077077613122,
+      "q95": 0.7468985674222184
+    },
+    "EXT_SOURCE_3": {
+      "missing_rate": 0.19926,
+      "type": "numeric",
+      "mean": 0.5110791597885007,
+      "std": 0.19484173114430087,
+      "q05": 0.1555002260013924,
+      "q50": 0.5370699579791587,
+      "q95": 0.7874761977281463
+    },
+    "YEARS_BEGINEXPLUATATION_AVG": {
+      "missing_rate": 0.48548,
+      "type": "numeric",
+      "mean": 0.9782472012749747,
+      "std": 0.05362734034789341,
+      "q05": 0.9682,
+      "q50": 0.9816,
+      "q95": 0.9955
+    },
+    "FLOORSMAX_AVG": {
+      "missing_rate": 0.4953,
+      "type": "numeric",
+      "mean": 0.2254908975629087,
+      "std": 0.1442348973563839,
+      "q05": 0.0417,
+      "q50": 0.1667,
+      "q95": 0.4792
+    },
+    "YEARS_BEGINEXPLUATATION_MODE": {
+      "missing_rate": 0.48548,
+      "type": "numeric",
+      "mean": 0.9776168273342144,
+      "std": 0.05911666730437181,
+      "q05": 0.9677,
+      "q50": 0.9816,
+      "q95": 0.9955
+    },
+    "FLOORSMAX_MODE": {
+      "missing_rate": 0.4953,
+      "type": "numeric",
+      "mean": 0.2216153833960769,
+      "std": 0.14338504817321654,
+      "q05": 0.0417,
+      "q50": 0.1667,
+      "q95": 0.4583
+    },
+    "YEARS_BEGINEXPLUATATION_MEDI": {
+      "missing_rate": 0.48548,
+      "type": "numeric",
+      "mean": 0.9782446590997433,
+      "std": 0.0549485478783752,
+      "q05": 0.9682,
+      "q50": 0.9816,
+      "q95": 0.9955
+    },
+    "FLOORSMAX_MEDI": {
+      "missing_rate": 0.4953,
+      "type": "numeric",
+      "mean": 0.22512550029720624,
+      "std": 0.14473922750238918,
+      "q05": 0.0417,
+      "q50": 0.1667,
+      "q95": 0.4792
+    },
+    "TOTALAREA_MODE": {
+      "missing_rate": 0.4802,
+      "type": "numeric",
+      "mean": 0.10076094267025779,
+      "std": 0.10506456570120078,
+      "q05": 0.0067,
+      "q50": 0.0682,
+      "q95": 0.3024549999999999
+    },
+    "EMERGENCYSTATE_MODE": {
+      "missing_rate": 0.47156,
+      "type": "categorical",
+      "top_values": {
+        "No": 0.52088,
+        "<<NA>>": 0.47156,
+        "Yes": 0.00756
+      }
+    },
+    "OBS_30_CNT_SOCIAL_CIRCLE": {
+      "missing_rate": 0.00358,
+      "type": "numeric",
+      "mean": 1.433130607575119,
+      "std": 2.3219428501451875,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 6.0
+    },
+    "DEF_30_CNT_SOCIAL_CIRCLE": {
+      "missing_rate": 0.00358,
+      "type": "numeric",
+      "mean": 0.1441761506192168,
+      "std": 0.44137168744877175,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "OBS_60_CNT_SOCIAL_CIRCLE": {
+      "missing_rate": 0.00358,
+      "type": "numeric",
+      "mean": 1.416611469059232,
+      "std": 2.3021328334966165,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 6.0
+    },
+    "DEF_60_CNT_SOCIAL_CIRCLE": {
+      "missing_rate": 0.00358,
+      "type": "numeric",
+      "mean": 0.10130266353545693,
+      "std": 0.35991784649436526,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "DAYS_LAST_PHONE_CHANGE": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -960.6459,
+      "std": 828.9550932614643,
+      "q05": -2526.0499999999997,
+      "q50": -753.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_2": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4e-05,
+      "std": 0.006324492073202376,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_3": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.7099,
+      "std": 0.4538128567175884,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "FLAG_DOCUMENT_4": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0,
+      "std": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_5": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.01474,
+      "std": 0.12051150509580902,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_6": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.08878,
+      "std": 0.2844287777187673,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "FLAG_DOCUMENT_7": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00022,
+      "std": 0.01483091363065615,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_8": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0821,
+      "std": 0.2745197574345869,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "FLAG_DOCUMENT_9": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00388,
+      "std": 0.06216930834791401,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_10": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4e-05,
+      "std": 0.006324492073202376,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_11": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00386,
+      "std": 0.062009493656585125,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_12": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2e-05,
+      "std": 0.004472135954999579,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_13": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00356,
+      "std": 0.05956003146361627,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_14": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00304,
+      "std": 0.05505287473311751,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_15": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00132,
+      "std": 0.0363081804236912,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_16": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0104,
+      "std": 0.10144972075327177,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_17": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00026,
+      "std": 0.016122580399922808,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_18": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00818,
+      "std": 0.09007358028299586,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_19": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0007,
+      "std": 0.026448515846447977,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_20": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00052,
+      "std": 0.022797806798021073,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "FLAG_DOCUMENT_21": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00036,
+      "std": 0.018970440099058086,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_HOUR": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 0.006541709195508954,
+      "std": 0.08232522736349483,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_DAY": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 0.006611301846525007,
+      "std": 0.1022986986927665,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_WEEK": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 0.033914818595156354,
+      "std": 0.20023975556787407,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_MON": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 0.26700380439825555,
+      "std": 0.8987117930872129,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_QRT": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 0.2622251090284866,
+      "std": 0.6052600635528703,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.0
+    },
+    "AMT_REQ_CREDIT_BUREAU_YEAR": {
+      "missing_rate": 0.13784,
+      "type": "numeric",
+      "mean": 1.9024774983761714,
+      "std": 1.8684309717320633,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 6.0
+    },
+    "INCOME_PER_PERSON": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 92972.70496422857,
+      "std": 73644.33217034147,
+      "q05": 27000.0,
+      "q50": 75000.0,
+      "q95": 225000.0
+    },
+    "ANNUITY_AS_INCOME_PERC": {
+      "missing_rate": 6e-05,
+      "type": "numeric",
+      "mean": 0.18064572401496518,
+      "std": 0.09400856629882913,
+      "q05": 0.063248,
+      "q50": 0.1622941176470588,
+      "q95": 0.35305
+    },
+    "PAYMENT_RATE": {
+      "missing_rate": 6e-05,
+      "type": "numeric",
+      "mean": 0.05374358673388916,
+      "std": 0.022594671237649536,
+      "q05": 0.0289235036560386,
+      "q50": 0.05,
+      "q95": 0.1050093808630394
+    },
+    "CREDIT_INCOME_RATIO": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3.9467505775613314,
+      "std": 2.662299163068313,
+      "q05": 1.0,
+      "q50": 3.264753260869565,
+      "q95": 9.095566666666668
+    },
+    "DOWN_PAYMENT": {
+      "missing_rate": 0.00092,
+      "type": "numeric",
+      "mean": -60722.51238139088,
+      "std": 70128.77662079342,
+      "q05": -190080.0,
+      "q50": -38133.0,
+      "q95": 0.0
+    },
+    "YEARS_EMPLOYED": {
+      "missing_rate": 0.18028,
+      "type": "numeric",
+      "mean": 6.504915076247218,
+      "std": 6.3109664662658185,
+      "q05": 0.565068493150685,
+      "q50": 4.53972602739726,
+      "q95": 19.708904109589042
+    },
+    "YEARS_BIRTH": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -43.9374591780822,
+      "std": 11.95141836560282,
+      "q05": -63.57260273972603,
+      "q50": -43.16986301369863,
+      "q95": -25.725890410958918
+    },
+    "EMPLOYMENT_AGE_RATIO": {
+      "missing_rate": 0.18028,
+      "type": "numeric",
+      "mean": -0.1563799693386837,
+      "std": 0.13196509759485506,
+      "q05": -0.4372201676607786,
+      "q50": -0.11888792280563401,
+      "q95": -0.015234793741028025
+    },
+    "BURO_NB_CREDITS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4.78552,
+      "std": 4.493052646034943,
+      "q05": 0.0,
+      "q50": 4.0,
+      "q95": 14.0
+    },
+    "BURO_NB_CURRENCIES": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.8574,
+      "std": 0.3592044272505715,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "BURO_DAYS_CREDIT_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -925.4754931728256,
+      "std": 642.8185012703913,
+      "q05": -2023.2964285714286,
+      "q50": -926.0,
+      "q95": 0.0
+    },
+    "BURO_DAYS_CREDIT_ENDDATE_MEAN": {
+      "missing_rate": 0.00748,
+      "type": "numeric",
+      "mean": 515.1648015582896,
+      "std": 2988.0412721128287,
+      "q05": -1455.0,
+      "q50": 0.0,
+      "q95": 5002.957142857143
+    },
+    "BURO_DAYS_CREDIT_UPDATE_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -467.9096088180496,
+      "std": 449.97931404591714,
+      "q05": -1279.0,
+      "q50": -394.4142857142857,
+      "q95": 0.0
+    },
+    "BURO_CREDIT_DAY_OVERDUE_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.7877599707063899,
+      "std": 22.196026133624095,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_AMT_CREDIT_MAX_OVERDUE_MEAN": {
+      "missing_rate": 0.25654,
+      "type": "numeric",
+      "mean": 7897.469210774636,
+      "std": 658052.3597769138,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 10800.0
+    },
+    "BURO_AMT_CREDIT_SUM_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 318468.8265677513,
+      "std": 654795.5789477254,
+      "q05": 0.0,
+      "q50": 158802.615,
+      "q95": 1107012.0214285704
+    },
+    "BURO_AMT_CREDIT_SUM_DEBT_MEAN": {
+      "missing_rate": 0.02346,
+      "type": "numeric",
+      "mean": 132005.23227824268,
+      "std": 420773.1312750236,
+      "q05": 0.0,
+      "q50": 24574.968,
+      "q95": 527701.7249999997
+    },
+    "BURO_AMT_CREDIT_SUM_OVERDUE_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 33.6824792393677,
+      "std": 3100.320356471796,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_AMT_CREDIT_SUM_LIMIT_MEAN": {
+      "missing_rate": 0.06734,
+      "type": "numeric",
+      "mean": 4877.897905569828,
+      "std": 23910.408999516338,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 27124.724769230783
+    },
+    "BURO_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.59274,
+      "type": "numeric",
+      "mean": 9675.743912571703,
+      "std": 86573.70287860947,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 34615.502999999975
+    },
+    "BURO_CNT_CREDIT_PROLONG_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.006460722609936868,
+      "std": 0.0588408996962968,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_BB_MONTHS_SIZE_MEAN": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 18.530206003817913,
+      "std": 18.87405209837698,
+      "q05": 0.0,
+      "q50": 15.2,
+      "q95": 53.690000000000026
+    },
+    "BURO_BB_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 17.85597542357045,
+      "std": 18.557365327447673,
+      "q05": 0.0,
+      "q50": 14.2,
+      "q95": 52.690000000000026
+    },
+    "BURO_BB_DPD_MEAN_MEAN": {
+      "missing_rate": 0.55766,
+      "type": "numeric",
+      "mean": 0.5547002560350273,
+      "std": 4.14298809145948,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.6666666
+    },
+    "BURO_BB_DPD_MAX_MEAN": {
+      "missing_rate": 0.55766,
+      "type": "numeric",
+      "mean": 2.8728945182456935,
+      "std": 10.505384203663999,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_BB_DPD_LAST_MEAN": {
+      "missing_rate": 0.57152,
+      "type": "numeric",
+      "mean": 0.4505032139581778,
+      "std": 4.909751483281198,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_BB_LATE_RATE_MEAN": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 0.0124015852164677,
+      "std": 0.04629304249239407,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.07038448665383658
+    },
+    "BURO_BB_UNKNOWN_RATE_MEAN": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 0.1314358197916265,
+      "std": 0.20953427318300663,
+      "q05": 0.0,
+      "q50": 0.0178571428571428,
+      "q95": 0.5973135098394795
+    },
+    "BURO_DAYS_CREDIT_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -414.13312,
+      "std": 520.438930300827,
+      "q05": -1521.0,
+      "q50": -236.0,
+      "q95": 0.0
+    },
+    "BURO_DAYS_CREDIT_ENDDATE_MAX": {
+      "missing_rate": 0.00748,
+      "type": "numeric",
+      "mean": 3707.0546286220933,
+      "std": 8699.534682120571,
+      "q05": -917.0,
+      "q50": 648.0,
+      "q95": 30997.0
+    },
+    "BURO_DAYS_CREDIT_UPDATE_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -118.07584,
+      "std": 312.16440364108206,
+      "q05": -718.0,
+      "q50": -15.0,
+      "q95": 0.0
+    },
+    "BURO_CREDIT_DAY_OVERDUE_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3.86836,
+      "std": 80.7160842251125,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_AMT_CREDIT_MAX_OVERDUE_MAX": {
+      "missing_rate": 0.25654,
+      "type": "numeric",
+      "mean": 12383.381373174077,
+      "std": 786729.088831397,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 22505.40000000002
+    },
+    "BURO_AMT_CREDIT_SUM_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 823654.8538415999,
+      "std": 1599101.7767839537,
+      "q05": 0.0,
+      "q50": 324000.0,
+      "q95": 3150000.0
+    },
+    "BURO_AMT_CREDIT_SUM_DEBT_MAX": {
+      "missing_rate": 0.02346,
+      "type": "numeric",
+      "mean": 438207.3673224036,
+      "std": 1141748.4601613085,
+      "q05": 0.0,
+      "q50": 84969.0,
+      "q95": 1896991.1999999988
+    },
+    "BURO_AMT_CREDIT_SUM_OVERDUE_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 164.64698280000002,
+      "std": 11067.626782581616,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_AMT_CREDIT_SUM_LIMIT_MAX": {
+      "missing_rate": 0.06734,
+      "type": "numeric",
+      "mean": 18357.06618585551,
+      "std": 73007.77189326858,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 135000.0
+    },
+    "BURO_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.59274,
+      "type": "numeric",
+      "mean": 22554.77024407013,
+      "std": 495581.69857856486,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 58243.5
+    },
+    "BURO_CNT_CREDIT_PROLONG_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0334,
+      "std": 0.21708381447646014,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_BB_MONTHS_SIZE_MAX": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 29.96319292446509,
+      "std": 30.35569361814034,
+      "q05": 0.0,
+      "q50": 22.0,
+      "q95": 88.0
+    },
+    "BURO_BB_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 29.288962344217627,
+      "std": 30.036057206930167,
+      "q05": 0.0,
+      "q50": 21.0,
+      "q95": 87.0
+    },
+    "BURO_BB_DPD_MEAN_MAX": {
+      "missing_rate": 0.55766,
+      "type": "numeric",
+      "mean": 1.4671997342899126,
+      "std": 8.673838816326334,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 4.5
+    },
+    "BURO_BB_DPD_MAX_MAX": {
+      "missing_rate": 0.55766,
+      "type": "numeric",
+      "mean": 6.876384681466745,
+      "std": 20.579559493168457,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_BB_DPD_LAST_MAX": {
+      "missing_rate": 0.57152,
+      "type": "numeric",
+      "mean": 1.3330843913368184,
+      "std": 11.130969352562943,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_BB_LATE_RATE_MAX": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 0.034112412381462384,
+      "std": 0.09977467703676482,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.2
+    },
+    "BURO_BB_UNKNOWN_RATE_MAX": {
+      "missing_rate": 0.55226,
+      "type": "numeric",
+      "mean": 0.29575192620624946,
+      "std": 0.3880404236542505,
+      "q05": 0.0,
+      "q50": 0.0454545454545454,
+      "q95": 1.0
+    },
+    "BURO_AMT_CREDIT_SUM_SUM": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1658860.2283077003,
+      "std": 2932716.639197232,
+      "q05": 0.0,
+      "q50": 716276.0700000001,
+      "q95": 6438635.700749997
+    },
+    "BURO_AMT_CREDIT_SUM_DEBT_SUM": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 541624.55673582,
+      "std": 1342358.4317190219,
+      "q05": 0.0,
+      "q50": 85369.5,
+      "q95": 2394990.881999999
+    },
+    "BURO_AMT_CREDIT_SUM_OVERDUE_SUM": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 200.2860153,
+      "std": 13980.6532077176,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_ACTIVE_Active": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.75996,
+      "std": 1.7969989934631712,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 5.0
+    },
+    "BURO_CNT_CREDIT_ACTIVE_Bad debt": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 6e-05,
+      "std": 0.00774581176843325,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_ACTIVE_Closed": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3.00624,
+      "std": 3.3581999065767736,
+      "q05": 0.0,
+      "q50": 2.0,
+      "q95": 10.0
+    },
+    "BURO_CNT_CREDIT_ACTIVE_Sold": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.01926,
+      "std": 0.14740925001416905,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_ACTIVE_nan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0,
+      "std": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Another type of loan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00268,
+      "std": 0.05322475230083414,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Car loan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.07784,
+      "std": 0.33272082661439945,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Cash loan (non-earmarked)": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4e-05,
+      "std": 0.006324492073202377,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Consumer credit": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3.49732,
+      "std": 3.531221064737262,
+      "q05": 0.0,
+      "q50": 3.0,
+      "q95": 10.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Credit card": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.11754,
+      "std": 1.466958550112359,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 4.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Interbank credit": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0,
+      "std": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Loan for business development": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00644,
+      "std": 0.09570114719370652,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Loan for purchase of shares (margin lending)": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4e-05,
+      "std": 0.006324492073202376,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Loan for the purchase of equipment": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 6e-05,
+      "std": 0.007745811768433249,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Loan for working capital replenishment": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0012,
+      "std": 0.04047953522281892,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Microloan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0307,
+      "std": 0.4439836172980356,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Mobile operator loan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0,
+      "std": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Mortgage": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.04998,
+      "std": 0.240339665604946,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Real estate loan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0001,
+      "std": 0.009999599983999203,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_Unknown type of loan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00158,
+      "std": 0.04356077996123367,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CNT_CREDIT_TYPE_nan": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0,
+      "std": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": -536.7974827406354,
+      "std": 510.64742641626583,
+      "q05": -1485.5607142857145,
+      "q50": -431.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_ENDDATE_MEAN": {
+      "missing_rate": 0.17884,
+      "type": "numeric",
+      "mean": 1990.9769609594487,
+      "std": 4995.662025899448,
+      "q05": -309.35833333333335,
+      "q50": 520.8,
+      "q95": 10979.225000000008
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_UPDATE_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": -108.26571796751526,
+      "std": 233.1240475628527,
+      "q05": -563.0,
+      "q50": -23.2,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_CREDIT_DAY_OVERDUE_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 1.5321322263474082,
+      "std": 37.64035179386878,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_AMT_CREDIT_MAX_OVERDUE_MEAN": {
+      "missing_rate": 0.47736,
+      "type": "numeric",
+      "mean": 1711.4199485512238,
+      "std": 8049.909046690729,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 9933.080624999997
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 458662.75115148874,
+      "std": 906023.8304919187,
+      "q05": 0.0,
+      "q50": 213799.1625,
+      "q95": 1684642.3492499997
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_DEBT_MEAN": {
+      "missing_rate": 0.1828,
+      "type": "numeric",
+      "mean": 303269.027074107,
+      "std": 777811.2030026132,
+      "q05": 0.0,
+      "q50": 98199.0,
+      "q95": 1196957.9249999982
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_OVERDUE_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 41.83172266255735,
+      "std": 2376.9947012907223,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_LIMIT_MEAN": {
+      "missing_rate": 0.24022,
+      "type": "numeric",
+      "mean": 10269.979311466668,
+      "std": 43360.731465112774,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 63000.0
+    },
+    "BURO_ACTIVE_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.65458,
+      "type": "numeric",
+      "mean": 9133.423510204122,
+      "std": 42703.0366123364,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 37791.0
+    },
+    "BURO_ACTIVE_CNT_CREDIT_PROLONG_MEAN": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 0.009722719732939637,
+      "std": 0.0900872536798215,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_BB_MONTHS_SIZE_MEAN": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 11.371570637603973,
+      "std": 13.728346795118856,
+      "q05": 0.0,
+      "q50": 7.666666666666667,
+      "q95": 38.0
+    },
+    "BURO_ACTIVE_BB_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 10.739365281811951,
+      "std": 13.428879766237264,
+      "q05": 0.0,
+      "q50": 6.666666666666667,
+      "q95": 37.0
+    },
+    "BURO_ACTIVE_BB_DPD_MEAN_MEAN": {
+      "missing_rate": 0.61348,
+      "type": "numeric",
+      "mean": 0.4574648298718824,
+      "std": 3.8045094927293426,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.5789474
+    },
+    "BURO_ACTIVE_BB_DPD_MAX_MEAN": {
+      "missing_rate": 0.61348,
+      "type": "numeric",
+      "mean": 2.159088892662734,
+      "std": 9.436517814226262,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_ACTIVE_BB_DPD_LAST_MEAN": {
+      "missing_rate": 0.63768,
+      "type": "numeric",
+      "mean": 0.5554289563590196,
+      "std": 5.996859800914989,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_BB_LATE_RATE_MEAN": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 0.012381036355645986,
+      "std": 0.05239135394484741,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0748698385998634
+    },
+    "BURO_ACTIVE_BB_UNKNOWN_RATE_MEAN": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 0.1477078231142853,
+      "std": 0.24741345742157472,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.7171014492753612
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": -344.20228361996055,
+      "std": 455.4749181206411,
+      "q05": -1243.0,
+      "q50": -196.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_ENDDATE_MAX": {
+      "missing_rate": 0.17884,
+      "type": "numeric",
+      "mean": 3850.8681864679234,
+      "std": 8633.29681019985,
+      "q05": -1.0,
+      "q50": 837.0,
+      "q95": 30982.15
+    },
+    "BURO_ACTIVE_DAYS_CREDIT_UPDATE_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": -50.13393947937224,
+      "std": 184.74035556936448,
+      "q05": -145.0,
+      "q50": -12.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_CREDIT_DAY_OVERDUE_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 3.6400949158913636,
+      "std": 77.21252593320129,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_AMT_CREDIT_MAX_OVERDUE_MAX": {
+      "missing_rate": 0.47736,
+      "type": "numeric",
+      "mean": 2556.089347351906,
+      "std": 11768.62170959254,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 14825.186999999985
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 766318.9295912038,
+      "std": 1470974.29798666,
+      "q05": 0.0,
+      "q50": 301500.0,
+      "q95": 3002140.7999999993
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_DEBT_MAX": {
+      "missing_rate": 0.1828,
+      "type": "numeric",
+      "mean": 517130.3645746696,
+      "std": 1223256.6957759205,
+      "q05": 0.0,
+      "q50": 150201.0,
+      "q95": 2143084.7249999964
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_OVERDUE_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 120.28227234282494,
+      "std": 6653.156832630235,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_AMT_CREDIT_SUM_LIMIT_MAX": {
+      "missing_rate": 0.24022,
+      "type": "numeric",
+      "mean": 20295.362351338546,
+      "std": 76238.0245339868,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 135007.497
+    },
+    "BURO_ACTIVE_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.65458,
+      "type": "numeric",
+      "mean": 12812.493819697758,
+      "std": 78492.32775218565,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 49250.25
+    },
+    "BURO_ACTIVE_CNT_CREDIT_PROLONG_MAX": {
+      "missing_rate": 0.14872,
+      "type": "numeric",
+      "mean": 0.024504275913917864,
+      "std": 0.18844283676551107,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_BB_MONTHS_SIZE_MAX": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 15.553028392758081,
+      "std": 19.25544376842125,
+      "q05": 0.0,
+      "q50": 9.0,
+      "q95": 54.0
+    },
+    "BURO_ACTIVE_BB_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 14.920823036966059,
+      "std": 18.96215784417282,
+      "q05": 0.0,
+      "q50": 8.0,
+      "q95": 53.0
+    },
+    "BURO_ACTIVE_BB_DPD_MEAN_MAX": {
+      "missing_rate": 0.61348,
+      "type": "numeric",
+      "mean": 0.7602447687731553,
+      "std": 5.378378788581873,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "BURO_ACTIVE_BB_DPD_MAX_MAX": {
+      "missing_rate": 0.61348,
+      "type": "numeric",
+      "mean": 3.495032598571872,
+      "std": 13.526942159932565,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_ACTIVE_BB_DPD_LAST_MAX": {
+      "missing_rate": 0.63768,
+      "type": "numeric",
+      "mean": 0.9016891145948333,
+      "std": 8.367906265928001,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_ACTIVE_BB_LATE_RATE_MAX": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 0.022193141982634435,
+      "std": 0.08126229354231265,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.1428571428571428
+    },
+    "BURO_ACTIVE_BB_UNKNOWN_RATE_MAX": {
+      "missing_rate": 0.60342,
+      "type": "numeric",
+      "mean": 0.2334940351964657,
+      "std": 0.3541040624190275,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "BURO_CLOSED_DAYS_CREDIT_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": -1158.7739038031848,
+      "std": 748.6484120175037,
+      "q05": -2415.12,
+      "q50": -1213.8,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_DAYS_CREDIT_ENDDATE_MEAN": {
+      "missing_rate": 0.11108,
+      "type": "numeric",
+      "mean": -491.9858777063648,
+      "std": 1515.5455624301908,
+      "q05": -1880.625,
+      "q50": -618.0,
+      "q95": 721.625
+    },
+    "BURO_CLOSED_DAYS_CREDIT_UPDATE_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": -692.8557709593481,
+      "std": 557.206218412518,
+      "q05": -1662.15,
+      "q50": -659.75,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_CREDIT_DAY_OVERDUE_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 0.10991012202607897,
+      "std": 9.975931469261669,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_MAX_OVERDUE_MEAN": {
+      "missing_rate": 0.37674,
+      "type": "numeric",
+      "mean": 10020.182544176183,
+      "std": 851080.209773437,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 10844.441999999988
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 215242.51251176756,
+      "std": 552405.8752841136,
+      "q05": 0.0,
+      "q50": 99924.75,
+      "q95": 741825.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_DEBT_MEAN": {
+      "missing_rate": 0.1442,
+      "type": "numeric",
+      "mean": 2895.674383442068,
+      "std": 63614.893810337926,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_OVERDUE_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 13.86010016159186,
+      "std": 2919.0040534836626,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_LIMIT_MEAN": {
+      "missing_rate": 0.20616,
+      "type": "numeric",
+      "mean": 861.8847041836362,
+      "std": 11591.382973833202,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.63776,
+      "type": "numeric",
+      "mean": 8606.548659925606,
+      "std": 107556.31370887674,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 31500.0
+    },
+    "BURO_CLOSED_CNT_CREDIT_PROLONG_MEAN": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 0.003589214966076498,
+      "std": 0.04549813501435733,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_BB_MONTHS_SIZE_MEAN": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 21.5703281534018,
+      "std": 22.15921001483686,
+      "q05": 0.0,
+      "q50": 18.0,
+      "q95": 63.0
+    },
+    "BURO_CLOSED_BB_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 20.925876125320677,
+      "std": 21.815600211443993,
+      "q05": 0.0,
+      "q50": 17.0,
+      "q95": 62.0
+    },
+    "BURO_CLOSED_BB_DPD_MEAN_MEAN": {
+      "missing_rate": 0.59672,
+      "type": "numeric",
+      "mean": 0.48364822061917273,
+      "std": 4.0332628171224245,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.3636364
+    },
+    "BURO_CLOSED_BB_DPD_MAX_MEAN": {
+      "missing_rate": 0.59672,
+      "type": "numeric",
+      "mean": 2.8882213595650668,
+      "std": 11.293834973560168,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_CLOSED_BB_DPD_LAST_MEAN": {
+      "missing_rate": 0.61608,
+      "type": "numeric",
+      "mean": 0.2656830597608877,
+      "std": 4.414774851860332,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_BB_LATE_RATE_MEAN": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 0.010507079946747213,
+      "std": 0.04382812819698669,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0588235294117647
+    },
+    "BURO_CLOSED_BB_UNKNOWN_RATE_MEAN": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 0.11413709624473214,
+      "std": 0.2092644365257776,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.5745732838589983
+    },
+    "BURO_CLOSED_DAYS_CREDIT_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": -756.6526885810825,
+      "std": 673.4794966721547,
+      "q05": -2294.0,
+      "q50": -603.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_DAYS_CREDIT_ENDDATE_MAX": {
+      "missing_rate": 0.11108,
+      "type": "numeric",
+      "mean": 623.158439454619,
+      "std": 4554.079853564235,
+      "q05": -1606.75,
+      "q50": -102.0,
+      "q95": 2688.75
+    },
+    "BURO_CLOSED_DAYS_CREDIT_UPDATE_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": -363.86056971514245,
+      "std": 457.8325624711548,
+      "q05": -1287.6,
+      "q50": -205.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_CREDIT_DAY_OVERDUE_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 0.38635905927633196,
+      "std": 26.50296087789887,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_MAX_OVERDUE_MAX": {
+      "missing_rate": 0.37674,
+      "type": "numeric",
+      "mean": 12344.997372364664,
+      "std": 853777.3683885838,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 18511.820999999974
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 434493.33139631676,
+      "std": 1053032.329489448,
+      "q05": 0.0,
+      "q50": 157500.0,
+      "q95": 1646456.399999998
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_DEBT_MAX": {
+      "missing_rate": 0.1442,
+      "type": "numeric",
+      "mean": 9107.225045103998,
+      "std": 138970.44919036268,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_OVERDUE_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 41.6146031461881,
+      "std": 8757.033722369952,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_CREDIT_SUM_LIMIT_MAX": {
+      "missing_rate": 0.20616,
+      "type": "numeric",
+      "mean": 2720.631676912224,
+      "std": 28531.42778693512,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.63776,
+      "type": "numeric",
+      "mean": 18339.013696444345,
+      "std": 520657.5798380774,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 45000.0
+    },
+    "BURO_CLOSED_CNT_CREDIT_PROLONG_MAX": {
+      "missing_rate": 0.10622,
+      "type": "numeric",
+      "mean": 0.014164559511289131,
+      "std": 0.13969189488812345,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_BB_MONTHS_SIZE_MAX": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 30.067180187207487,
+      "std": 30.775301401121535,
+      "q05": 0.0,
+      "q50": 22.0,
+      "q95": 88.0
+    },
+    "BURO_CLOSED_BB_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 29.422728159126365,
+      "std": 30.429699782281045,
+      "q05": 0.0,
+      "q50": 21.0,
+      "q95": 87.0
+    },
+    "BURO_CLOSED_BB_DPD_MEAN_MAX": {
+      "missing_rate": 0.59672,
+      "type": "numeric",
+      "mean": 1.0479345490547511,
+      "std": 7.30817891001913,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "BURO_CLOSED_BB_DPD_MAX_MAX": {
+      "missing_rate": 0.59672,
+      "type": "numeric",
+      "mean": 5.803164054751042,
+      "std": 19.047089963369025,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 15.0
+    },
+    "BURO_CLOSED_BB_DPD_LAST_MAX": {
+      "missing_rate": 0.61608,
+      "type": "numeric",
+      "mean": 0.6407584913523651,
+      "std": 8.330934111516429,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "BURO_CLOSED_BB_LATE_RATE_MAX": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 0.023340826215207198,
+      "std": 0.07915366213764277,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.13974418604651195
+    },
+    "BURO_CLOSED_BB_UNKNOWN_RATE_MAX": {
+      "missing_rate": 0.58976,
+      "type": "numeric",
+      "mean": 0.22594772831273421,
+      "std": 0.35311775968750597,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_NB_APPS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4.5942,
+      "std": 4.170332623842356,
+      "q05": 0.0,
+      "q50": 3.0,
+      "q95": 12.0
+    },
+    "PREV_NB_APPROVED": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.88506,
+      "std": 2.188128093711858,
+      "q05": 0.0,
+      "q50": 2.0,
+      "q95": 7.0
+    },
+    "PREV_NB_REFUSED": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.79076,
+      "std": 1.7312996766508701,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 4.0
+    },
+    "PREV_AMT_CREDIT_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 170803.32494102762,
+      "std": 166937.55760633788,
+      "q05": 29381.219999999998,
+      "q50": 117809.71875,
+      "q95": 486758.034375
+    },
+    "PREV_AMT_APPLICATION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 154735.57829257738,
+      "std": 154614.47344273224,
+      "q05": 27648.96075,
+      "q50": 106072.91517857142,
+      "q95": 444929.5125000001
+    },
+    "PREV_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.0558,
+      "type": "numeric",
+      "mean": 14567.201076864827,
+      "std": 9935.589982364116,
+      "q05": 4256.6986875,
+      "q50": 11996.923125,
+      "q95": 33289.78424999997
+    },
+    "PREV_AMT_DOWN_PAYMENT_MEAN": {
+      "missing_rate": 0.1104,
+      "type": "numeric",
+      "mean": 6979.9185635473805,
+      "std": 17748.205153562158,
+      "q05": 0.0,
+      "q50": 3355.0687500000004,
+      "q95": 24211.574999999862
+    },
+    "PREV_AMT_GOODS_PRICE_MEAN": {
+      "missing_rate": 0.05764,
+      "type": "numeric",
+      "mean": 194921.18869233597,
+      "std": 194965.30496704986,
+      "q05": 34306.65,
+      "q50": 128333.63571428572,
+      "q95": 580410.9000000001
+    },
+    "PREV_CNT_PAYMENT_MEAN": {
+      "missing_rate": 0.05578,
+      "type": "numeric",
+      "mean": 14.52595386245032,
+      "std": 8.434780465051537,
+      "q05": 5.333333333333333,
+      "q50": 12.0,
+      "q95": 31.333333333333332
+    },
+    "PREV_DAYS_DECISION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -922.2593580509578,
+      "std": 582.2438013837805,
+      "q05": -2102.304166666667,
+      "q50": -791.3666666666667,
+      "q95": -232.0
+    },
+    "PREV_PREV_APP_CREDIT_PERC_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.8449726085507041,
+      "std": 0.2517225916016328,
+      "q05": 0.42439905861994925,
+      "q50": 0.9044734066794429,
+      "q95": 1.157835056366103
+    },
+    "PREV_PREV_ANNUITY_CREDIT_RATIO_MEAN": {
+      "missing_rate": 0.0558,
+      "type": "numeric",
+      "mean": 0.10827690956773102,
+      "std": 0.041437340217105656,
+      "q05": 0.04999999999969141,
+      "q50": 0.1025201719111436,
+      "q95": 0.18930982400594726
+    },
+    "PREV_PREV_DOWN_PAYMENT_PERC_MEAN": {
+      "missing_rate": 0.1104,
+      "type": "numeric",
+      "mean": 0.09917845781387945,
+      "std": 0.14618767242128164,
+      "q05": 0.0,
+      "q50": 0.06810664666925054,
+      "q95": 0.32743159385558446
+    },
+    "PREV_AMT_CREDIT_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 416519.8054241033,
+      "std": 463922.9617253828,
+      "q05": 38593.575,
+      "q50": 225000.0,
+      "q95": 1350000.0
+    },
+    "PREV_AMT_APPLICATION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 376845.19105904247,
+      "std": 426848.97353313194,
+      "q05": 37710.0,
+      "q50": 202500.0,
+      "q95": 1345500.0
+    },
+    "PREV_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.0558,
+      "type": "numeric",
+      "mean": 23794.763668608346,
+      "std": 19223.274757250296,
+      "q05": 4832.734500000001,
+      "q50": 18000.0,
+      "q95": 59654.5424999999
+    },
+    "PREV_AMT_DOWN_PAYMENT_MAX": {
+      "missing_rate": 0.1104,
+      "type": "numeric",
+      "mean": 11486.297873201438,
+      "std": 24135.89239556734,
+      "q05": 0.0,
+      "q50": 5872.5,
+      "q95": 43696.34999999988
+    },
+    "PREV_AMT_GOODS_PRICE_MAX": {
+      "missing_rate": 0.05764,
+      "type": "numeric",
+      "mean": 378231.71728002036,
+      "std": 427022.45217146684,
+      "q05": 38883.825,
+      "q50": 202500.0,
+      "q95": 1345500.0
+    },
+    "PREV_CNT_PAYMENT_MAX": {
+      "missing_rate": 0.05578,
+      "type": "numeric",
+      "mean": 24.08404820910381,
+      "std": 16.73731819340456,
+      "q05": 6.0,
+      "q50": 18.0,
+      "q95": 60.0
+    },
+    "PREV_DAYS_DECISION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -482.9836322111318,
+      "std": 544.7038760146072,
+      "q05": -1789.0,
+      "q50": -300.0,
+      "q95": -22.0
+    },
+    "PREV_PREV_APP_CREDIT_PERC_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.1119548103617907,
+      "std": 0.3002506982552269,
+      "q05": 0.9023370529641694,
+      "q50": 1.0442672705346938,
+      "q95": 1.546448087337799
+    },
+    "PREV_PREV_ANNUITY_CREDIT_RATIO_MAX": {
+      "missing_rate": 0.0558,
+      "type": "numeric",
+      "mean": 0.15122999632045914,
+      "std": 0.05973126388919105,
+      "q05": 0.05425001635308083,
+      "q50": 0.136000078495515,
+      "q95": 0.26645044063975754
+    },
+    "PREV_PREV_DOWN_PAYMENT_PERC_MAX": {
+      "missing_rate": 0.1104,
+      "type": "numeric",
+      "mean": 0.16312009999036375,
+      "std": 0.2370614684266342,
+      "q05": 0.0,
+      "q50": 0.10689238910187085,
+      "q95": 0.6048234671403641
+    },
+    "PREV_AMT_CREDIT_SUM": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 961160.6897774277,
+      "std": 1510394.7628461116,
+      "q05": 45000.0,
+      "q50": 428222.25,
+      "q95": 3506873.8500000024
+    },
+    "PREV_AMT_APPLICATION_SUM": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 858149.161674209,
+      "std": 1370652.134281174,
+      "q05": 44238.375,
+      "q50": 382050.0,
+      "q95": 3154703.625
+    },
+    "PREV_AMT_ANNUITY_SUM": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 60394.00315196244,
+      "std": 73149.95958153054,
+      "q05": 5455.9125,
+      "q50": 36363.4425,
+      "q95": 192648.91500000007
+    },
+    "PREV_LAST_DAYS_DECISION": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -482.9836322111318,
+      "std": 544.7038760146072,
+      "q05": -1789.0,
+      "q50": -300.0,
+      "q95": -22.0
+    },
+    "PREV_LAST_STATUS": {
+      "missing_rate": 0.05424,
+      "type": "categorical",
+      "top_values": {
+        "Approved": 0.58258,
+        "Canceled": 0.24112,
+        "Refused": 0.10444,
+        "<<NA>>": 0.05424,
+        "Unused offer": 0.01762
+      }
+    },
+    "PREV_APPROVED_AMT_CREDIT_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 182432.47406931236,
+      "std": 176433.15730752682,
+      "q05": 30909.0375,
+      "q50": 125823.40714285715,
+      "q95": 520757.0437500001
+    },
+    "PREV_APPROVED_AMT_APPLICATION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 165209.51983061308,
+      "std": 163436.65394353098,
+      "q05": 29161.575,
+      "q50": 113581.8,
+      "q95": 473427.72000000015
+    },
+    "PREV_APPROVED_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.05426,
+      "type": "numeric",
+      "mean": 13892.593508622766,
+      "std": 9727.102689639596,
+      "q05": 4009.54725,
+      "q50": 11384.88,
+      "q95": 32032.088999999985
+    },
+    "PREV_APPROVED_AMT_DOWN_PAYMENT_MEAN": {
+      "missing_rate": 0.1144,
+      "type": "numeric",
+      "mean": 7072.680992037364,
+      "std": 16645.86303308082,
+      "q05": 0.0,
+      "q50": 3420.0,
+      "q95": 24750.0
+    },
+    "PREV_APPROVED_AMT_GOODS_PRICE_MEAN": {
+      "missing_rate": 0.05746,
+      "type": "numeric",
+      "mean": 172346.49846425338,
+      "std": 169700.4335100474,
+      "q05": 31455.0,
+      "q50": 117585.0,
+      "q95": 495246.3524999993
+    },
+    "PREV_APPROVED_CNT_PAYMENT_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 13.522119999459647,
+      "std": 7.539977366855903,
+      "q05": 5.25,
+      "q50": 12.0,
+      "q95": 27.5
+    },
+    "PREV_APPROVED_DAYS_DECISION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -1030.5024985843843,
+      "std": 596.4017410367553,
+      "q05": -2200.0,
+      "q50": -939.0,
+      "q95": -261.0
+    },
+    "PREV_APPROVED_PREV_APP_CREDIT_PERC_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.9686348978786246,
+      "std": 0.19043816413681916,
+      "q05": 0.6885047510845598,
+      "q50": 0.9749313272913329,
+      "q95": 1.2120236761023235
+    },
+    "PREV_APPROVED_PREV_ANNUITY_CREDIT_RATIO_MEAN": {
+      "missing_rate": 0.05426,
+      "type": "numeric",
+      "mean": 0.1117019609161916,
+      "std": 0.04265342452716108,
+      "q05": 0.0499999999997222,
+      "q50": 0.1065412964313252,
+      "q95": 0.19326721528042912
+    },
+    "PREV_APPROVED_PREV_DOWN_PAYMENT_PERC_MEAN": {
+      "missing_rate": 0.1144,
+      "type": "numeric",
+      "mean": 0.10317477746799376,
+      "std": 0.1518753525892013,
+      "q05": 0.0,
+      "q50": 0.0735576533331748,
+      "q95": 0.3413631833520989
+    },
+    "PREV_APPROVED_AMT_CREDIT_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 342256.78389739466,
+      "std": 380042.04291573673,
+      "q05": 34158.15,
+      "q50": 182286.0,
+      "q95": 1223010.0
+    },
+    "PREV_APPROVED_AMT_APPLICATION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 309846.7306929876,
+      "std": 350384.4018182792,
+      "q05": 33300.0,
+      "q50": 169164.0,
+      "q95": 1129500.0
+    },
+    "PREV_APPROVED_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.05426,
+      "type": "numeric",
+      "mean": 21574.62119525451,
+      "std": 17593.210786208292,
+      "q05": 4466.3355,
+      "q50": 16167.105,
+      "q95": 55512.769499999995
+    },
+    "PREV_APPROVED_AMT_DOWN_PAYMENT_MAX": {
+      "missing_rate": 0.1144,
+      "type": "numeric",
+      "mean": 10855.59449796748,
+      "std": 21621.587659045643,
+      "q05": 0.0,
+      "q50": 5485.5,
+      "q95": 40502.83499999991
+    },
+    "PREV_APPROVED_AMT_GOODS_PRICE_MAX": {
+      "missing_rate": 0.05746,
+      "type": "numeric",
+      "mean": 310905.26027563814,
+      "std": 350513.25956894003,
+      "q05": 34335.0,
+      "q50": 170550.0,
+      "q95": 1129500.0
+    },
+    "PREV_APPROVED_CNT_PAYMENT_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 21.09456944679411,
+      "std": 14.627114666306825,
+      "q05": 6.0,
+      "q50": 14.0,
+      "q95": 54.0
+    },
+    "PREV_APPROVED_DAYS_DECISION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -601.7211131788191,
+      "std": 568.3410925492553,
+      "q05": -2027.3000000000002,
+      "q50": -431.0,
+      "q95": -65.0
+    },
+    "PREV_APPROVED_PREV_APP_CREDIT_PERC_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.0965534189208026,
+      "std": 0.28200353103546505,
+      "q05": 0.8855605653507719,
+      "q50": 1.0339832642806621,
+      "q95": 1.5132012927062173
+    },
+    "PREV_APPROVED_PREV_ANNUITY_CREDIT_RATIO_MAX": {
+      "missing_rate": 0.05426,
+      "type": "numeric",
+      "mean": 0.14855619799789946,
+      "std": 0.06027463535732493,
+      "q05": 0.05166999999982708,
+      "q50": 0.133399606293377,
+      "q95": 0.2664501819768868
+    },
+    "PREV_APPROVED_PREV_DOWN_PAYMENT_PERC_MAX": {
+      "missing_rate": 0.1144,
+      "type": "numeric",
+      "mean": 0.15836152914068602,
+      "std": 0.23285035698098547,
+      "q05": 0.0,
+      "q50": 0.1058843801134203,
+      "q95": 0.5870637567923711
+    },
+    "PREV_REFUSED_AMT_CREDIT_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 116316.76120083919,
+      "std": 294556.93114333216,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 705589.0875000004
+    },
+    "PREV_REFUSED_AMT_APPLICATION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 104028.32702953577,
+      "std": 268653.86859279964,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 650420.1813750004
+    },
+    "PREV_REFUSED_AMT_ANNUITY_MEAN": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 6202.071891419611,
+      "std": 12838.818860257301,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 33690.659999999996
+    },
+    "PREV_REFUSED_AMT_DOWN_PAYMENT_MEAN": {
+      "missing_rate": 0.23254,
+      "type": "numeric",
+      "mean": 1305.871107785102,
+      "std": 12032.175968885911,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 6165.000000000033
+    },
+    "PREV_REFUSED_AMT_GOODS_PRICE_MEAN": {
+      "missing_rate": 0.07654,
+      "type": "numeric",
+      "mean": 111869.99455660666,
+      "std": 280618.96666378365,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 675000.0
+    },
+    "PREV_REFUSED_CNT_PAYMENT_MEAN": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 6.562166774283286,
+      "std": 13.801096186458308,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 41.142857142857146
+    },
+    "PREV_REFUSED_DAYS_DECISION_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -292.48621199427953,
+      "std": 596.9429179996027,
+      "q05": -1834.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "PREV_REFUSED_PREV_APP_CREDIT_PERC_MEAN": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.292499698035808,
+      "std": 0.44703579097618995,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0149645342352582
+    },
+    "PREV_REFUSED_PREV_ANNUITY_CREDIT_RATIO_MEAN": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 0.025983536168147442,
+      "std": 0.04636820484022249,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.1196752538014136
+    },
+    "PREV_REFUSED_PREV_DOWN_PAYMENT_PERC_MEAN": {
+      "missing_rate": 0.23254,
+      "type": "numeric",
+      "mean": 0.014339041473593937,
+      "std": 0.06939290607404769,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.11111111110943983
+    },
+    "PREV_REFUSED_AMT_CREDIT_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 152521.45683439772,
+      "std": 381279.50123094185,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 952272.0
+    },
+    "PREV_REFUSED_AMT_APPLICATION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 136409.92793446544,
+      "std": 347657.0197406965,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 900000.0
+    },
+    "PREV_REFUSED_AMT_ANNUITY_MAX": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 7526.853209589848,
+      "std": 15908.809612467341,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 41901.48
+    },
+    "PREV_REFUSED_AMT_DOWN_PAYMENT_MAX": {
+      "missing_rate": 0.23254,
+      "type": "numeric",
+      "mean": 1588.6662442342272,
+      "std": 13287.182711469759,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 7986.600000000013
+    },
+    "PREV_REFUSED_AMT_GOODS_PRICE_MAX": {
+      "missing_rate": 0.07654,
+      "type": "numeric",
+      "mean": 139733.91748781758,
+      "std": 351200.00315622456,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 900000.0
+    },
+    "PREV_REFUSED_CNT_PAYMENT_MAX": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 8.003314362966355,
+      "std": 16.47559183730214,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 60.0
+    },
+    "PREV_REFUSED_DAYS_DECISION_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": -251.52453053628827,
+      "std": 561.040396765897,
+      "q05": -1695.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "PREV_REFUSED_PREV_APP_CREDIT_PERC_MAX": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.3197674400717897,
+      "std": 0.4919134919083045,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.1111111110873753
+    },
+    "PREV_REFUSED_PREV_ANNUITY_CREDIT_RATIO_MAX": {
+      "missing_rate": 0.08278,
+      "type": "numeric",
+      "mean": 0.029909368682349214,
+      "std": 0.053791640847037366,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.1499999999966666
+    },
+    "PREV_REFUSED_PREV_DOWN_PAYMENT_PERC_MAX": {
+      "missing_rate": 0.23254,
+      "type": "numeric",
+      "mean": 0.017261200672716453,
+      "std": 0.08213015237933746,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.1111270243890823
+    },
+    "PREV_CODE_REJECT_REASON_CLIENT": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.07644645576044662,
+      "std": 0.31642652247358694,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_CODE_REJECT_REASON_HC": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.4986888851294197,
+      "std": 1.360139033648126,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "PREV_CODE_REJECT_REASON_LIMIT": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.16160548130603958,
+      "std": 0.6237726911678443,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_CODE_REJECT_REASON_SCO": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.10996447301641009,
+      "std": 0.48528551929593455,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_CODE_REJECT_REASON_XAP": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 3.9450812045339196,
+      "std": 3.0747325899459788,
+      "q05": 1.0,
+      "q50": 3.0,
+      "q95": 10.0
+    },
+    "PREV_CODE_REJECT_REASON___OTHER__": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.06589409575367958,
+      "std": 0.3831156932245113,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "PREV_NAME_YIELD_GROUP_XNA": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.471811030282524,
+      "std": 2.171912514225578,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 6.0
+    },
+    "PREV_NAME_YIELD_GROUP_high": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.0501184232786331,
+      "std": 1.3886910300774489,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 4.0
+    },
+    "PREV_NAME_YIELD_GROUP_low_action": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.2708721028590763,
+      "std": 0.6954957396739587,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_NAME_YIELD_GROUP_low_normal": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.9482321096261208,
+      "std": 1.304678527333783,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 3.0
+    },
+    "PREV_NAME_YIELD_GROUP_middle": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.1166469294535613,
+      "std": 1.3737274194727551,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 4.0
+    },
+    "PREV_CHANNEL_TYPE_Contact center": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.19983928269328372,
+      "std": 0.6447531439139935,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_CHANNEL_TYPE_Country-wide": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.4619988157672137,
+      "std": 1.6720691279012425,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 5.0
+    },
+    "PREV_CHANNEL_TYPE_Credit and cash offices": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 2.0660844188800542,
+      "std": 3.2723186854563333,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 8.0
+    },
+    "PREV_CHANNEL_TYPE_Regional / Local": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.3146887159533074,
+      "std": 0.7244293458808841,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.0
+    },
+    "PREV_CHANNEL_TYPE_Stone": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.6322534258162748,
+      "std": 1.022789850086928,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "PREV_CHANNEL_TYPE___OTHER__": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.18281593638978177,
+      "std": 0.8466558387492428,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "PREV_PRODUCT_COMBINATION_Cash": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.8092539333446117,
+      "std": 1.6571401659777338,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 4.0
+    },
+    "PREV_PRODUCT_COMBINATION_Cash X-Sell: low": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.37908137371003214,
+      "std": 0.9582458907568385,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.0
+    },
+    "PREV_PRODUCT_COMBINATION_Cash X-Sell: middle": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.4106538656741668,
+      "std": 0.9318398996776194,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.0
+    },
+    "PREV_PRODUCT_COMBINATION_POS household with interest": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.7806420233463035,
+      "std": 1.1005413351258648,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "PREV_PRODUCT_COMBINATION_POS mobile with interest": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 0.6553459651497209,
+      "std": 1.027389705657916,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3.0
+    },
+    "PREV_PRODUCT_COMBINATION___OTHER__": {
+      "missing_rate": 0.05424,
+      "type": "numeric",
+      "mean": 1.8227034342750803,
+      "std": 2.0202181148280283,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 6.0
+    },
+    "INS_NB_PREV": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.77922,
+      "std": 2.0925017951904503,
+      "q05": 0.0,
+      "q50": 2.0,
+      "q95": 7.0
+    },
+    "INS_INST_COUNT_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 13.197573611559305,
+      "std": 11.406711805207298,
+      "q05": 4.0,
+      "q50": 10.25,
+      "q95": 32.0
+    },
+    "INS_VERSION_NUNIQUE_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 1.548581030698141,
+      "std": 0.8914245496230282,
+      "q05": 1.0,
+      "q50": 1.375,
+      "q95": 2.5
+    },
+    "INS_DAYS_LATE_MEAN_MEAN": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 1.0235963469414597,
+      "std": 8.823946743398594,
+      "q05": 0.0,
+      "q50": 0.03125,
+      "q95": 3.235046625
+    },
+    "INS_DAYS_LATE_MAX_MEAN": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 7.900053237176271,
+      "std": 54.756215109682074,
+      "q05": 0.0,
+      "q50": 0.4,
+      "q95": 19.25
+    },
+    "INS_LATE_RATE_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.06830106184129259,
+      "std": 0.10708035574165543,
+      "q05": 0.0,
+      "q50": 0.014376968061178549,
+      "q95": 0.2902001728110601
+    },
+    "INS_MISSING_ENTRY_RATE_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.0002112511386484212,
+      "std": 0.00887992521568032,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "INS_PAYMENT_PERC_MEAN_MEAN": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 30992.9649366974,
+      "std": 6696971.333530309,
+      "q05": 0.83322504,
+      "q50": 1.0,
+      "q95": 1.267256625
+    },
+    "INS_PAYMENT_PERC_MIN_MEAN": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 4481.230190459107,
+      "std": 975212.3519241494,
+      "q05": 0.0419827875,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "INS_UNDERPAY_RATE_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.07286874444011465,
+      "std": 0.1330309665369941,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.3421898496240606
+    },
+    "INS_PAYMENT_DIFF_SUM_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 1633.6158930020008,
+      "std": 58842.86646573431,
+      "q05": -40456.3905,
+      "q50": 0.0,
+      "q95": 53473.668750000164
+    },
+    "INS_AMT_PAYMENT_SUM_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 209807.02812819878,
+      "std": 238482.89169320036,
+      "q05": 33283.564875000004,
+      "q50": 132986.83875,
+      "q95": 635595.762375
+    },
+    "INS_AMT_INSTALMENT_SUM_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 208195.65850251666,
+      "std": 223371.92403207126,
+      "q05": 34471.5615,
+      "q50": 136733.0625,
+      "q95": 615154.1006250001
+    },
+    "INS_DAYS_INSTALMENT_MIN_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -1082.6745278180774,
+      "std": 640.0440263549735,
+      "q05": -2332.0,
+      "q50": -988.0,
+      "q95": -251.0
+    },
+    "INS_DAYS_INSTALMENT_MAX_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -770.4683016478858,
+      "std": 595.3531391062779,
+      "q05": -1922.575,
+      "q50": -674.0,
+      "q95": -23.0
+    },
+    "INS_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 312.2062261701917,
+      "std": 264.04095349798763,
+      "q05": 90.0,
+      "q50": 254.225,
+      "q95": 737.5150000000001
+    },
+    "INS_DAYS_INSTALMENT_LAST_MEAN": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -770.4683016478858,
+      "std": 595.3531391062779,
+      "q05": -1922.575,
+      "q50": -674.0,
+      "q95": -23.0
+    },
+    "INS_DAYS_LATE_LAST_MEAN": {
+      "missing_rate": 0.05278,
+      "type": "numeric",
+      "mean": 2.438686394414117,
+      "std": 35.62248172171179,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.5
+    },
+    "INS_PAYMENT_PERC_LAST_MEAN": {
+      "missing_rate": 0.05278,
+      "type": "numeric",
+      "mean": 4482.884036750771,
+      "std": 975366.7714646305,
+      "q05": 0.7899416,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "INS_INST_COUNT_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 22.88929460931234,
+      "std": 26.640610143800114,
+      "q05": 5.0,
+      "q50": 13.0,
+      "q95": 93.0
+    },
+    "INS_VERSION_NUNIQUE_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 2.0538435560808814,
+      "std": 1.7447066243303242,
+      "q05": 1.0,
+      "q50": 2.0,
+      "q95": 4.0
+    },
+    "INS_DAYS_LATE_MEAN_MAX": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 2.3997040105795384,
+      "std": 17.460742910571895,
+      "q05": 0.0,
+      "q50": 0.09090909,
+      "q95": 7.51794255
+    },
+    "INS_DAYS_LATE_MAX_MAX": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 18.71145727794664,
+      "std": 110.65660339945734,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 35.0
+    },
+    "INS_LATE_RATE_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.13904905385950625,
+      "std": 0.1883471052080461,
+      "q05": 0.0,
+      "q50": 0.0476190476190476,
+      "q95": 0.5
+    },
+    "INS_MISSING_ENTRY_RATE_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.00047475748958421564,
+      "std": 0.0157963288542453,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "INS_PAYMENT_PERC_MEAN_MAX": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 32116.358349742568,
+      "std": 6703189.421383741,
+      "q05": 0.90909094,
+      "q50": 1.0,
+      "q95": 1.846037825
+    },
+    "INS_PAYMENT_PERC_MIN_MAX": {
+      "missing_rate": 0.05248,
+      "type": "numeric",
+      "mean": 4481.360058823806,
+      "std": 975212.3513274691,
+      "q05": 0.053800860000000006,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "INS_UNDERPAY_RATE_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 0.15914794610024116,
+      "std": 0.24431060975446858,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.7222222222222222
+    },
+    "INS_PAYMENT_DIFF_SUM_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 28645.749925475888,
+      "std": 139119.83215299202,
+      "q05": -9894.727400000002,
+      "q50": 0.0,
+      "q95": 182508.7015000002
+    },
+    "INS_AMT_PAYMENT_SUM_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 397486.6415843852,
+      "std": 512245.59317692794,
+      "q05": 37476.1755,
+      "q50": 193203.675,
+      "q95": 1465931.20725
+    },
+    "INS_AMT_INSTALMENT_SUM_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 386080.11768204655,
+      "std": 467478.65423414623,
+      "q05": 38915.79749999999,
+      "q50": 199758.1725,
+      "q95": 1373161.84425
+    },
+    "INS_DAYS_INSTALMENT_MIN_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -620.0328211406138,
+      "std": 605.1114884891495,
+      "q05": -2162.0,
+      "q50": -428.0,
+      "q95": -77.0
+    },
+    "INS_DAYS_INSTALMENT_MAX_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -320.019988180168,
+      "std": 541.6351002704803,
+      "q05": -1663.0,
+      "q50": -50.0,
+      "q95": -6.0
+    },
+    "INS_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 528.7404280467728,
+      "std": 599.3598863948577,
+      "q05": 120.0,
+      "q50": 330.0,
+      "q95": 2305.1500000000015
+    },
+    "INS_DAYS_INSTALMENT_LAST_MAX": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": -320.019988180168,
+      "std": 541.6351002704803,
+      "q05": -1663.0,
+      "q50": -50.0,
+      "q95": -6.0
+    },
+    "INS_DAYS_LATE_LAST_MAX": {
+      "missing_rate": 0.05278,
+      "type": "numeric",
+      "mean": 6.178860243660396,
+      "std": 73.0946208949533,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 7.0
+    },
+    "INS_PAYMENT_PERC_LAST_MAX": {
+      "missing_rate": 0.05278,
+      "type": "numeric",
+      "mean": 4482.969762980486,
+      "std": 975366.7711301213,
+      "q05": 1.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "INS_TOTAL_AMT_PAYMENT": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 676056.6854846131,
+      "std": 914056.7639276406,
+      "q05": 42352.4835,
+      "q50": 318835.30500000005,
+      "q95": 2569377.4560000002
+    },
+    "INS_TOTAL_AMT_INSTALMENT": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 669358.8421154333,
+      "std": 875845.9860215845,
+      "q05": 43724.79224999999,
+      "q50": 328232.745,
+      "q95": 2455017.8827500003
+    },
+    "INS_TOTAL_PAYMENT_DIFF": {
+      "missing_rate": 0.05244,
+      "type": "numeric",
+      "mean": 6786.991041165466,
+      "std": 171138.60220219783,
+      "q05": -130443.3415,
+      "q50": 0.0,
+      "q95": 179861.32800000018
+    },
+    "POS_NB_PREV": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.60766,
+      "std": 2.012563125123446,
+      "q05": 0.0,
+      "q50": 2.0,
+      "q95": 6.0
+    },
+    "MONTHS_BALANCE_MEAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -31.7885722924356,
+      "std": 20.299508755567235,
+      "q05": -71.5,
+      "q50": -28.5,
+      "q95": -6.0
+    },
+    "MONTHS_BALANCE_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -26.908484083393517,
+      "std": 20.322634756831153,
+      "q05": -67.0,
+      "q50": -23.5,
+      "q95": -2.0
+    },
+    "CNT_INSTALMENT_MEAN_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 13.665785755613804,
+      "std": 7.170262151187418,
+      "q05": 5.857142857142858,
+      "q50": 11.916666666666666,
+      "q95": 27.0
+    },
+    "CNT_INSTALMENT_MAX_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 14.26173946857219,
+      "std": 7.5872302209422475,
+      "q05": 6.0,
+      "q50": 12.0,
+      "q95": 29.0
+    },
+    "CNT_INSTALMENT_FUTURE_MEAN_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 8.792876289099922,
+      "std": 6.187187997200435,
+      "q05": 2.8333333333333335,
+      "q50": 6.8,
+      "q95": 21.06610432330827
+    },
+    "CNT_INSTALMENT_FUTURE_MAX_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 14.033364296338899,
+      "std": 7.648954026686756,
+      "q05": 6.0,
+      "q50": 12.0,
+      "q95": 29.0
+    },
+    "SK_DPD_MEAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 3.451873973609194,
+      "std": 49.96839487637683,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0921356275303646
+    },
+    "SK_DPD_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 9.214829150153523,
+      "std": 112.25245961507146,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 7.333333333333333
+    },
+    "SK_DPD_SUM_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 235.5216868880299,
+      "std": 4296.57479759823,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 13.0
+    },
+    "SK_DPD_DEF_MEAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.19012364822373504,
+      "std": 9.858260015425744,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.3125
+    },
+    "SK_DPD_DEF_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.7101408835591574,
+      "std": 19.743428263544548,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.6666666666666665
+    },
+    "SK_DPD_DEF_SUM_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 11.875491892227878,
+      "std": 911.5950535100178,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 4.0
+    },
+    "POS_LATE_MEAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.018915072742299047,
+      "std": 0.06849028122445987,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.11183673469387821
+    },
+    "POS_LATE_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.08493054709068945,
+      "std": 0.21357795692396622,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.5
+    },
+    "POS_DEF_LATE_MEAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.009094524851560839,
+      "std": 0.035964862410471324,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.06025628284758767
+    },
+    "POS_DEF_LATE_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.05853175329451312,
+      "std": 0.17782175125540736,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.5
+    },
+    "POS_REMAINING_RATIO_MEAN_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 0.5641399072883194,
+      "std": 0.10946645691711074,
+      "q05": 0.4166666101902272,
+      "q50": 0.5520832977430581,
+      "q95": 0.7499998750000207
+    },
+    "POS_REMAINING_RATIO_MAX_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 0.9802163287345604,
+      "std": 0.09144301452846337,
+      "q05": 0.8409090093285861,
+      "q50": 0.99999990000001,
+      "q95": 0.999999958333335
+    },
+    "POS_MONTHS_MIN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -36.66870667449107,
+      "std": 20.702416266416744,
+      "q05": -77.0,
+      "q50": -33.8,
+      "q95": -9.0
+    },
+    "POS_MONTHS_MAX_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -26.908484083393517,
+      "std": 20.322634756831153,
+      "q05": -67.0,
+      "q50": -23.5,
+      "q95": -2.0
+    },
+    "POS_MONTHS_SIZE_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 10.752427327781746,
+      "std": 5.901372629625468,
+      "q05": 5.0,
+      "q50": 10.0,
+      "q95": 19.0
+    },
+    "POS_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 9.760222591097545,
+      "std": 5.904312881804907,
+      "q05": 4.0,
+      "q50": 9.0,
+      "q95": 18.0
+    },
+    "POS_MONTHS_BALANCE_LAST_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -26.908484083393517,
+      "std": 20.322634756831153,
+      "q05": -67.0,
+      "q50": -23.5,
+      "q95": -2.0
+    },
+    "POS_SK_DPD_LAST_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 4.923966438718342,
+      "std": 100.44309519538334,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_SK_DPD_DEF_LAST_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.26073340101041104,
+      "std": 19.214216769282473,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_LATE_LAST_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.007494930885593754,
+      "std": 0.06872502910703997,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_DEF_LATE_LAST_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.0037171158041518176,
+      "std": 0.045286458565643346,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_REMAINING_RATIO_LAST_MEAN": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 0.09898621153307643,
+      "std": 0.1529317267383832,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.4166666579861113
+    },
+    "POS_STATUS_LAST_ACTIVE_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.274678655998223,
+      "std": 0.3279876913737263,
+      "q05": 0.0,
+      "q50": 0.2,
+      "q95": 1.0
+    },
+    "POS_STATUS_LAST_AMORTIZED DEBT_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 2.1259407287724818e-05,
+      "std": 0.0032602879716152337,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_STATUS_LAST_APPROVED_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 6.466403050016299e-05,
+      "std": 0.004756188433568326,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_STATUS_LAST_CANCELED_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 1.0629703643862409e-05,
+      "std": 0.0023053962396801125,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_STATUS_LAST_COMPLETED_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.7235309868458112,
+      "std": 0.3283792848508304,
+      "q05": 0.0,
+      "q50": 0.8,
+      "q95": 1.0
+    },
+    "POS_STATUS_LAST_DEMAND_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 7.617954278101393e-05,
+      "std": 0.005527679824279638,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_STATUS_LAST_RETURNED TO THE STORE_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.0003125807773114206,
+      "std": 0.010625155543030455,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_STATUS_LAST_SIGNED_MEAN": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.001305043694441628,
+      "std": 0.024497424512600664,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "MONTHS_BALANCE_MEAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -17.27917403583939,
+      "std": 18.951102514778057,
+      "q05": -65.0,
+      "q50": -10.5,
+      "q95": -2.5
+    },
+    "MONTHS_BALANCE_MAX_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -12.536396105276586,
+      "std": 18.70959440962627,
+      "q05": -60.0,
+      "q50": -4.0,
+      "q95": -1.0
+    },
+    "CNT_INSTALMENT_MEAN_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 19.60792011422108,
+      "std": 13.277143818509318,
+      "q05": 6.0,
+      "q50": 12.0,
+      "q95": 48.0
+    },
+    "CNT_INSTALMENT_MAX_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 20.42397312696658,
+      "std": 13.952556041433354,
+      "q05": 6.0,
+      "q50": 12.0,
+      "q95": 48.0
+    },
+    "CNT_INSTALMENT_FUTURE_MEAN_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 14.033839955205739,
+      "std": 12.315704792858131,
+      "q05": 3.0,
+      "q50": 9.0,
+      "q95": 43.0
+    },
+    "CNT_INSTALMENT_FUTURE_MAX_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 20.31195254698529,
+      "std": 14.007885310126508,
+      "q05": 6.0,
+      "q50": 12.0,
+      "q95": 48.0
+    },
+    "SK_DPD_MEAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 6.499993443526597,
+      "std": 76.69184952640798,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.75
+    },
+    "SK_DPD_MAX_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 17.198201454143458,
+      "std": 163.2923984950044,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 18.0
+    },
+    "SK_DPD_SUM_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 400.97584931332113,
+      "std": 6162.249578956193,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 31.0
+    },
+    "SK_DPD_DEF_MEAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.4131546309540013,
+      "std": 19.212414661850833,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.9166666666666666
+    },
+    "SK_DPD_DEF_MAX_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 1.606764743398954,
+      "std": 37.368395065803455,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 8.0
+    },
+    "SK_DPD_DEF_SUM_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 24.550321017050045,
+      "std": 1771.2083911015168,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 12.0
+    },
+    "POS_LATE_MEAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.043827312652766126,
+      "std": 0.12974010801566724,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.2857142857142857
+    },
+    "POS_LATE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.17758,
+      "std": 0.3821626153423321,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "POS_DEF_LATE_MEAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.022137338851995415,
+      "std": 0.073459220035663,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.1538461538461538
+    },
+    "POS_DEF_LATE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.12866,
+      "std": 0.334826591800788,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "POS_REMAINING_RATIO_MEAN_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 0.6562963984699143,
+      "std": 0.15929740708477513,
+      "q05": 0.4909090418181867,
+      "q50": 0.6333332222222425,
+      "q95": 0.9479166469184032
+    },
+    "POS_REMAINING_RATIO_MAX_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 1.0004254018672032,
+      "std": 0.10194537726930143,
+      "q05": 0.9999998333333612,
+      "q50": 0.9999999166666736,
+      "q95": 0.9999999833333336
+    },
+    "POS_MONTHS_MIN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -21.898294995535526,
+      "std": 19.881011480759998,
+      "q05": -72.0,
+      "q50": -16.0,
+      "q95": -3.0
+    },
+    "POS_MONTHS_MAX_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -12.536396105276586,
+      "std": 18.70959440962627,
+      "q05": -60.0,
+      "q50": -4.0,
+      "q95": -1.0
+    },
+    "POS_MONTHS_SIZE_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 14.411369531017476,
+      "std": 8.965716960084501,
+      "q05": 6.0,
+      "q50": 13.0,
+      "q95": 27.0
+    },
+    "POS_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 13.420596113780348,
+      "std": 8.97008007747992,
+      "q05": 5.0,
+      "q50": 12.0,
+      "q95": 26.0
+    },
+    "POS_MONTHS_BALANCE_LAST_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": -12.536396105276586,
+      "std": 18.70959440962627,
+      "q05": -60.0,
+      "q50": -4.0,
+      "q95": -1.0
+    },
+    "POS_SK_DPD_LAST_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 7.0967515625664355,
+      "std": 129.73327317782974,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_SK_DPD_DEF_LAST_MAX": {
+      "missing_rate": 0.05924,
+      "type": "numeric",
+      "mean": 0.5245120966027467,
+      "std": 35.1464141906414,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_LATE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.01602,
+      "std": 0.12555347415940932,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_DEF_LATE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00896,
+      "std": 0.09423320008319762,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "POS_POS_REMAINING_RATIO_LAST_MAX": {
+      "missing_rate": 0.05928,
+      "type": "numeric",
+      "mean": 0.23209061678561763,
+      "std": 0.31511917149821844,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.8958333146701394
+    },
+    "POS_STATUS_LAST_ACTIVE_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "True": 0.5067,
+        "False": 0.43406,
+        "<<NA>>": 0.05924
+      }
+    },
+    "POS_STATUS_LAST_AMORTIZED DEBT_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.94072,
+        "<<NA>>": 0.05924,
+        "True": 4e-05
+      }
+    },
+    "POS_STATUS_LAST_APPROVED_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.94056,
+        "<<NA>>": 0.05924,
+        "True": 0.0002
+      }
+    },
+    "POS_STATUS_LAST_CANCELED_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.94074,
+        "<<NA>>": 0.05924,
+        "True": 2e-05
+      }
+    },
+    "POS_STATUS_LAST_COMPLETED_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "True": 0.8355,
+        "False": 0.10526,
+        "<<NA>>": 0.05924
+      }
+    },
+    "POS_STATUS_LAST_DEMAND_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.94056,
+        "<<NA>>": 0.05924,
+        "True": 0.0002
+      }
+    },
+    "POS_STATUS_LAST_RETURNED TO THE STORE_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.93976,
+        "<<NA>>": 0.05924,
+        "True": 0.001
+      }
+    },
+    "POS_STATUS_LAST_SIGNED_MAX": {
+      "missing_rate": 0.05924,
+      "type": "categorical",
+      "top_values": {
+        "False": 0.93722,
+        "<<NA>>": 0.05924,
+        "True": 0.00354
+      }
+    },
+    "CC_NB_CARDS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.28414,
+      "std": 0.4548061096466795,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "CC_MONTHS_BALANCE_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -5.531018333333333,
+      "std": 12.541341915455467,
+      "q05": -44.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_BALANCE_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_AMT_BALANCE_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 19764.970256825276,
+      "std": 64836.59234781985,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 133073.63810467962
+    },
+    "CC_AMT_BALANCE_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 40495.23507645001,
+      "std": 111442.45417251806,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 248995.22849999982
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 58800.27842672398,
+      "std": 137749.25074389786,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 337500.0
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 70588.035,
+      "std": 155241.0170639717,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 450000.0
+    },
+    "CC_AMT_DRAWINGS_CURRENT_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3925.082819430652,
+      "std": 15820.29014804855,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 25345.505133333267
+    },
+    "CC_AMT_DRAWINGS_CURRENT_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 28141.28298765,
+      "std": 79436.46618844986,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 180000.0
+    },
+    "CC_AMT_DRAWINGS_CURRENT_SUM_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 77482.84101975,
+      "std": 270864.10375256883,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 492495.65774999943
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2942.8175467421565,
+      "std": 12988.846064743551,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 16738.437344720496
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 23104.779456149998,
+      "std": 82300.9491124919,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 154350.0
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_SUM_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 79062.45590925,
+      "std": 275876.8104334,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 537846.7499999994
+    },
+    "CC_AMT_TOTAL_RECEIVABLE_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 19633.864249251354,
+      "std": 64456.94756195512,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 132368.13006818172
+    },
+    "CC_AMT_TOTAL_RECEIVABLE_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 40212.36289935,
+      "std": 110707.70192211386,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 246615.2257499996
+    },
+    "CC_CNT_DRAWINGS_CURRENT_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.43874041727606744,
+      "std": 2.084113743103439,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.2857142857142856
+    },
+    "CC_CNT_DRAWINGS_CURRENT_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.92723,
+      "std": 6.462778417770297,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 11.0
+    },
+    "CC_SK_DPD_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.052372836659412,
+      "std": 22.145816148463098,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0125
+    },
+    "CC_SK_DPD_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4.25879,
+      "std": 71.74806811644108,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "CC_SK_DPD_DEF_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.042983410914878506,
+      "std": 6.095831291538314,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_SK_DPD_DEF_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.25329,
+      "std": 14.426500672523918,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_UTIL_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4734987.828068625,
+      "std": 614049440.9873548,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.6763954348921382
+    },
+    "CC_CC_UTIL_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 31835910.323887713,
+      "std": 5124188506.970051,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0576498849953384
+    },
+    "CC_CC_PAY_RATIO_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 954621401.0764209,
+      "std": 7163843317.856224,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3095629449.5538206
+    },
+    "CC_CC_PAY_RATIO_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 15246805746.586855,
+      "std": 69773339463.2155,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 100896711749.99942
+    },
+    "CC_CC_LATE_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00579972282001676,
+      "std": 0.04173375592064075,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0125
+    },
+    "CC_CC_LATE_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.05799,
+      "std": 0.23330934092952924,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "CC_CC_DEF_LATE_MEAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0033339504335491614,
+      "std": 0.02335803588114981,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_DEF_LATE_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.04823,
+      "std": 0.21382184522548187,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_MIN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -10.63881,
+      "std": 24.619541612720663,
+      "q05": -87.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_MAX_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_SIZE_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 10.49777,
+      "std": 24.476896298267636,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 86.0
+    },
+    "CC_HISTORY_SPAN_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 10.21559,
+      "std": 24.172027049664944,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 85.0
+    },
+    "CC_MONTHS_BALANCE_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_AMT_BALANCE_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 21064.3777449,
+      "std": 85229.05147589245,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 167576.32124999966
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 49117.59,
+      "std": 134589.57454856392,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 315000.0
+    },
+    "CC_SK_DPD_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.51186,
+      "std": 62.39003181327762,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_SK_DPD_DEF_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0607,
+      "std": 12.52922963082339,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_UTIL_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2423846.774280363,
+      "std": 406818990.8641838,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.9151350999801721
+    },
+    "CC_CC_PAY_RATIO_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 595253896.7895578,
+      "std": 14446629900.871784,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.07385023255243937
+    },
+    "CC_CC_LATE_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00352,
+      "std": 0.059225668029960384,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_DEF_LATE_LAST_MEAN": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00088,
+      "std": 0.02965203508806263,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_BALANCE_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -5.504463333333333,
+      "std": 12.520827158104701,
+      "q05": -44.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_BALANCE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_AMT_BALANCE_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 19822.489415046864,
+      "std": 64940.541916731716,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 133709.82651279014
+    },
+    "CC_AMT_BALANCE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 40614.5574954,
+      "std": 111644.90337442934,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 250299.7244999999
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 58938.01666270506,
+      "std": 138001.47394923805,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 337500.0
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 70744.41,
+      "std": 155554.10994369228,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 450000.0
+    },
+    "CC_AMT_DRAWINGS_CURRENT_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 3943.477122098576,
+      "std": 15881.793321537,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 25518.386122159027
+    },
+    "CC_AMT_DRAWINGS_CURRENT_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 28233.5024907,
+      "std": 79637.72087594031,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 180000.0
+    },
+    "CC_AMT_DRAWINGS_CURRENT_SUM_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 77691.0946707,
+      "std": 271124.4362989935,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 495000.0
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2956.266124759524,
+      "std": 13046.0686952737,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 16793.69113509315
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 23192.081191800004,
+      "std": 82502.60737873882,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 154722.16799999986
+    },
+    "CC_AMT_PAYMENT_TOTAL_CURRENT_SUM_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 79313.2642737,
+      "std": 276220.432194274,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 539803.7864999999
+    },
+    "CC_AMT_TOTAL_RECEIVABLE_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 19690.93400028254,
+      "std": 64559.76254932216,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 132738.60897321417
+    },
+    "CC_AMT_TOTAL_RECEIVABLE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 40330.9916649,
+      "std": 110909.06039154118,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 247871.93849999967
+    },
+    "CC_CNT_DRAWINGS_CURRENT_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.44038323354937975,
+      "std": 2.0916222128431174,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 2.3
+    },
+    "CC_CNT_DRAWINGS_CURRENT_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.93284,
+      "std": 6.473908229512934,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 11.0
+    },
+    "CC_SK_DPD_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 1.0524273819471635,
+      "std": 22.14581454909853,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0126582278481012
+    },
+    "CC_SK_DPD_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4.26056,
+      "std": 71.74855584324825,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "CC_SK_DPD_DEF_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.04302096601911414,
+      "std": 6.095832735783638,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_SK_DPD_DEF_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.25414,
+      "std": 14.427030035468594,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_UTIL_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 4741729.17998654,
+      "std": 614052468.8914078,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.6781880823654803
+    },
+    "CC_CC_UTIL_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 31865686.374372248,
+      "std": 5124194829.990266,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.057699999994124
+    },
+    "CC_CC_PAY_RATIO_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 961834623.6245289,
+      "std": 7215775469.0346985,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 3114504143.082641
+    },
+    "CC_CC_PAY_RATIO_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 15321502615.034307,
+      "std": 69989087581.29355,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 101940203249.99986
+    },
+    "CC_CC_LATE_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00582246314312747,
+      "std": 0.04176944277499752,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0126582278481012
+    },
+    "CC_CC_LATE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.05838,
+      "std": 0.23446295028746258,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    },
+    "CC_CC_DEF_LATE_MEAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0033552126345475627,
+      "std": 0.023418943205738403,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_DEF_LATE_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0486,
+      "std": 0.21503247377848675,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_MIN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -10.5857,
+      "std": 24.580004455703033,
+      "q05": -87.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_MAX_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_MONTHS_SIZE_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 10.55088,
+      "std": 24.59910554360607,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 87.0
+    },
+    "CC_HISTORY_SPAN_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 10.2687,
+      "std": 24.29420063458951,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 86.0
+    },
+    "CC_MONTHS_BALANCE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": -0.42322,
+      "std": 0.769179214704406,
+      "q05": -2.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_AMT_BALANCE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 21128.089579199997,
+      "std": 85394.54481863318,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 168461.17649999983
+    },
+    "CC_AMT_CREDIT_LIMIT_ACTUAL_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 49269.6,
+      "std": 134865.83804553855,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 315000.0
+    },
+    "CC_SK_DPD_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2.51186,
+      "std": 62.39003181327762,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_SK_DPD_DEF_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.0607,
+      "std": 12.52922963082339,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_UTIL_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 2423846.7745180614,
+      "std": 406818990.8641823,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.9178166362468704
+    },
+    "CC_CC_PAY_RATIO_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 597163382.2396576,
+      "std": 14456909619.501516,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.07386724106206406
+    },
+    "CC_CC_LATE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00352,
+      "std": 0.059225668029960384,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "CC_CC_DEF_LATE_LAST_MAX": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.00088,
+      "std": 0.02965203508806263,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 0.0
+    },
+    "HAS_BURO": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.85414,
+      "std": 0.352969335986914,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "HAS_PREV": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.94576,
+      "std": 0.22649293229804682,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "HAS_INS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.94756,
+      "std": 0.2229148721391294,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "HAS_POS": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.94076,
+      "std": 0.23607570191517108,
+      "q05": 0.0,
+      "q50": 1.0,
+      "q95": 1.0
+    },
+    "HAS_CC": {
+      "missing_rate": 0.0,
+      "type": "numeric",
+      "mean": 0.28242,
+      "std": 0.45018107119240053,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 1.0
+    }
+  }
+}
