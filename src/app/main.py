@@ -24,6 +24,8 @@ from app.schemas import (
     MetadataResponse,
 )
 
+import hashlib
+
 app_name = "Home Scredit Scoring API"
 art_dir = Path(__file__).resolve().parent / "artifacts"
 
@@ -156,8 +158,12 @@ def predict(req: PredictRequest) -> PredictResponse:
         raise HTTPException(status_code=503, detail="Model not loaded")
 
     request_id = str(uuid.uuid4())
-    ts = now_utc_iso()
     t0 = time.perf_counter()
+    timestamp = datetime.now(timezone.utc)
+
+    payload_hash = hashlib.sha256(
+        json.dumps(req.features, sort_keys=True, default=str).encode("utf-8")
+    ).hexdigest()
 
     # utile pour monitoring “qualité d’entrée”
     n_payload_features = len(req.features) if req.features else 0
@@ -175,11 +181,12 @@ def predict(req: PredictRequest) -> PredictResponse:
 
         latency_ms = float((time.perf_counter() - t0) * 1000)
 
+
         # log succès
         append_jsonl(PRED_LOG, {
             "request_id": request_id,
-            "timestamp_utc": ts,
-            "client_id": getattr(req, "client_id", None),
+            "timestamp": timestamp.isoformat(),
+            "client_id": req.client_id,
             "model_name": model_name,
             "model_version": model_version,
             "threshold": float(threshold),
@@ -187,19 +194,22 @@ def predict(req: PredictRequest) -> PredictResponse:
             "fp_cost": fp_cost,
             "latency_ms": latency_ms,
             "input": {
+                "payload_hash": payload_hash,
                 "n_features_sent": n_payload_features,
                 "missing_count_aligned": missing_count,
                 "missing_rate_aligned": missing_rate,
-                "features": req.features,  # PoC: on stocke tout
             },
             "output": {
                 "probability_default": proba,
                 "prediction": pred,
                 "decision": decision,
-            }
+            },
         })
 
         return PredictResponse(
+            request_id=request_id,
+            timestamp=timestamp,
+            latency_ms=float(latency_ms),
             probability_default=proba,
             threshold=float(threshold),
             prediction=pred,
@@ -210,14 +220,14 @@ def predict(req: PredictRequest) -> PredictResponse:
         latency_ms = float((time.perf_counter() - t0) * 1000)
         append_jsonl(ERR_LOG, {
             "request_id": request_id,
-            "timestamp_utc": ts,
-            "client_id": getattr(req, "client_id", None),
+            "timestamp": timestamp.isoformat(),
+            "client_id": req.client_id,
             "model_name": model_name,
             "model_version": model_version,
             "latency_ms": latency_ms,
             "status_code": e.status_code,
             "error": e.detail,
-            "input": {"features": req.features},
+            "input": {"payload_hash": payload_hash},
         })
         raise
 
@@ -225,14 +235,14 @@ def predict(req: PredictRequest) -> PredictResponse:
         latency_ms = float((time.perf_counter() - t0) * 1000)
         append_jsonl(ERR_LOG, {
             "request_id": request_id,
-            "timestamp_utc": ts,
-            "client_id": getattr(req, "client_id", None),
+            "timestamp": timestamp.isoformat(),
+            "client_id": req.client_id,
             "model_name": model_name,
             "model_version": model_version,
             "latency_ms": latency_ms,
             "status_code": 500,
             "error": str(e),
-            "input": {"features": req.features},
+            "input": {"payload_hash": payload_hash},
         })
         raise HTTPException(status_code=422, detail={"error": "Prediction failed", "message": str(e)})
 

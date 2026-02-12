@@ -9,3 +9,4 @@ def test_health():
         assert r.status_code == 200
         data = r.json()
         assert data ["status"] == "ok"
+        assert isinstance(data["model_loaded"], bool)
