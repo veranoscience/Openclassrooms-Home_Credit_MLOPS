@@ -16,6 +16,9 @@ def test_predict_payload():
         assert 0.0 <= data["probability_default"] <= 1.0
         assert data["prediction"] in [0,1]
         assert data["decision"] in ["Accepté", "Refusé"]
+        assert "request_id" in data
+        assert "timestamp" in data
+        assert data ["latency_ms"] >= 0
 
 def test_predict_rejects_unknown_feature():
     with TestClient(app) as client:

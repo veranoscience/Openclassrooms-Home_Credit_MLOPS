@@ -9,9 +9,6 @@ FeatureValue = Union[float, int, str, bool, None]
 class PredictRequest (BaseModel):
     """
     Requête API: un dictionnaire {feature_name: value}
-    On ne déclare pas 512 champs, on valide plutôt:
-    - non vide
-    - quelques règles métier 
     """
     client_id: Optional[str] = Field(
         default=None,
