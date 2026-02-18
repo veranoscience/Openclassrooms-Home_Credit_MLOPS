@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -60,6 +61,79 @@ st.info(
     "- **Les données** : est-ce que les informations envoyées au modèle ont changé par rapport à la normale ?  \n\n"
     "Si les données changent trop, le modèle risque de faire de mauvaises prédictions — c'est ce qu'on appelle le **data drift**."
 )
+
+# ── Carte : Contexte de l'analyse ─────────────────────────────────────────────
+st.subheader("Sur quelles données porte cette analyse ?")
+
+def _fmt_date(iso: str | None) -> str:
+    """Convertit une date ISO en format lisible (JJ/MM/AAAA HH:MM)."""
+    if not iso:
+        return "—"
+    try:
+        return pd.to_datetime(iso, utc=True).strftime("%d/%m/%Y %H:%M")
+    except Exception:
+        return iso
+
+baseline_n   = ops.get("baseline_n_rows")
+baseline_src = ops.get("baseline_source", "baseline_ref.csv")
+prod_n       = ops.get("prod_n_rows_for_drift")
+prod_limit   = ops.get("prod_limit_requested")
+date_min     = _fmt_date(ops.get("prod_date_min"))
+date_max     = _fmt_date(ops.get("prod_date_max"))
+
+# Fallback baseline : lire baseline_stats.json si le champ est absent
+if baseline_n is None:
+    stats_path = out_dir.parent / "baseline_stats.json"
+    if stats_path.exists():
+        try:
+            baseline_n = read_json(stats_path).get("n_rows")
+        except Exception:
+            pass
+
+# Fallback période : date de modification d'ops_summary.json
+if date_min == "—" and date_max == "—":
+    try:
+        mtime = os.path.getmtime(ops_path)
+        analysis_date = pd.Timestamp(mtime, unit="s", tz="UTC").strftime("%d/%m/%Y à %H:%M")
+    except Exception:
+        analysis_date = None
+else:
+    analysis_date = None
+
+ctx_left, ctx_right = st.columns(2)
+
+with ctx_left:
+    st.markdown("**Données de référence (AVANT)**")
+    st.markdown(
+        "Ce sont les données sur lesquelles le modèle a été entraîné. "
+        "Elles servent de point de comparaison — ce à quoi les données « normales » ressemblent."
+    )
+    if baseline_n is not None:
+        st.metric("Nombre de lignes", f"{baseline_n:,}".replace(",", " "))
+    else:
+        st.metric("Nombre de lignes", "—")
+    st.caption(f"Source : `{Path(baseline_src).name}`")
+
+with ctx_right:
+    st.markdown("**Données actuelles (APRÈS — production)**")
+    st.markdown(
+        "Ce sont les vraies demandes de crédit reçues par le modèle en production, "
+        "sur la période ci-dessous."
+    )
+    if prod_n is not None:
+        limit_note = f" (max {prod_limit:,} demandées)".replace(",", " ") if prod_limit else ""
+        st.metric("Nombre de lignes analysées", f"{prod_n:,}{limit_note}".replace(",", " "))
+    else:
+        st.metric("Nombre de requêtes reçues", f"{n_req:,}".replace(",", " "))
+    if date_min != "—" or date_max != "—":
+        st.caption(f"Période couverte : du **{date_min}** au **{date_max}**")
+    elif analysis_date:
+        st.caption(
+            f"Période exacte non disponible. Analyse générée le **{analysis_date}**.  \n"
+            "Relancez `run_monitoring_analysis.py` pour voir les dates précises."
+        )
+    else:
+        st.caption("Période non disponible — relancez l'analyse de monitoring.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # RÉSUMÉ GLOBAL

@@ -131,6 +131,16 @@ def compute_ops_summary(pred_df: pd.DataFrame, err_df: pd.DataFrame) -> Dict[str
     lat_err = err_df["latency_ms"].dropna().astype(float) if n_err else pd.Series([], dtype=float)
     lat_all = pd.concat([lat_ok, lat_err], ignore_index=True)
 
+    # Période de la fenêtre de production
+    ts_series = pred_df["ts"].dropna() if n_ok else pd.Series([], dtype=object)
+    prod_date_min: str | None = None
+    prod_date_max: str | None = None
+    if len(ts_series):
+        ts_parsed = pd.to_datetime(ts_series, utc=True, errors="coerce").dropna()
+        if len(ts_parsed):
+            prod_date_min = ts_parsed.min().isoformat()
+            prod_date_max = ts_parsed.max().isoformat()
+
     return {
         "n_requests": total,
         "n_ok": n_ok,
@@ -139,6 +149,8 @@ def compute_ops_summary(pred_df: pd.DataFrame, err_df: pd.DataFrame) -> Dict[str
         "latency_ms_p50": float(lat_all.quantile(0.50)) if len(lat_all) else None,
         "latency_ms_p95": float(lat_all.quantile(0.95)) if len(lat_all) else None,
         "latency_ms_max": float(lat_all.max()) if len(lat_all) else None,
+        "prod_date_min": prod_date_min,
+        "prod_date_max": prod_date_max,
     }
 
 
@@ -171,6 +183,9 @@ def main() -> None:
 
     # --- Ops summary ---
     ops_summary = compute_ops_summary(pred_df, err_df)
+    ops_summary["baseline_n_rows"] = int(len(baseline))
+    ops_summary["baseline_source"] = args.baseline
+    ops_summary["prod_limit_requested"] = args.limit
     (out_dir / "ops_summary.json").write_text(
         json.dumps(ops_summary, indent=2, ensure_ascii=False), encoding="utf-8"
     )
@@ -186,6 +201,10 @@ def main() -> None:
     prod_top = pd.json_normalize(pred_with_top["top_features"].tolist())
     prod_top = prod_top.reindex(columns=top_features)
     prod_top = to_numeric_df(prod_top)
+    ops_summary["prod_n_rows_for_drift"] = int(len(prod_top))
+    (out_dir / "ops_summary.json").write_text(
+        json.dumps(ops_summary, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
 
     # --- Choisir les colonnes utilisables (évite l’erreur Evidently 'empty column') ---
     min_non_null = int(args.min_non_null)
