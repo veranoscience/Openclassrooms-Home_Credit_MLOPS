@@ -8,9 +8,8 @@ import streamlit as st
 
 DEFAULT_DIR = Path("reports/monitoring")
 
-# Seuils d'alertes 
-ALERT_ERROR_RATE = 0.05      
-ALERT_LAT_P95_MS = 200.0     
+ALERT_ERROR_RATE = 0.05
+ALERT_LAT_P95_MS = 200.0
 ALERT_PSI_WARN = 0.20
 ALERT_PSI_CRIT = 0.30
 
@@ -19,143 +18,200 @@ def read_json(p: Path):
     return json.loads(p.read_text(encoding="utf-8"))
 
 
-st.set_page_config(page_title="HomeCredit Monitoring", layout="wide")
-st.title(" Monitoring — Home Credit Scoring")
+def psi_level(psi: float) -> str:
+    if pd.isna(psi):
+        return "NA"
+    if psi >= ALERT_PSI_CRIT:
+        return "CRITIQUE"
+    if psi >= ALERT_PSI_WARN:
+        return "WARNING"
+    return "OK"
 
-# Sidebar
+
+# ── Page config ──────────────────────────────────────────────────────────────
+st.set_page_config(page_title="HomeCredit – Surveillance du modèle", layout="wide")
+
+# ── Sidebar ───────────────────────────────────────────────────────────────────
 st.sidebar.header("Configuration")
 out_dir = Path(st.sidebar.text_input("Dossier monitoring", str(DEFAULT_DIR))).resolve()
 
-ops_path = out_dir / "ops_summary.json"
-psi_path = out_dir / "drift_psi.csv"
+ops_path  = out_dir / "ops_summary.json"
+psi_path  = out_dir / "drift_psi.csv"
 drop_path = out_dir / "dropped_columns.json"
 html_path = out_dir / "evidently_drift_report.html"
 
 if not ops_path.exists():
-    st.error(f"Fichier manquant: {ops_path}")
+    st.error(f"Fichier manquant : {ops_path}")
     st.stop()
 
-ops = read_json(ops_path)
-
-# --- KPIs Ops ---
-st.subheader(" Santé de l'API (technique)")
-c1, c2, c3, c4 = st.columns(4)
-
-
-n_requests = ops.get("n_requests", 0)
-error_rate = ops.get("error_rate", 0.0) or 0.0
-lat_p50 = ops.get("latency_ms_p50", None)
+ops    = read_json(ops_path)
+n_req  = ops.get("n_requests", 0)
+err_rt = ops.get("error_rate", 0.0) or 0.0
 lat_p95 = ops.get("latency_ms_p95", None)
 
-errors_est = int(round(error_rate * n_requests)) if n_requests else 0
+# ── Titre ─────────────────────────────────────────────────────────────────────
+st.title("Surveillance du modèle de scoring – Home Credit")
 
-c1.metric("Requêtes reçues", f"{n_requests}")
-c1.caption("Nombre total d’appels API sur la période analysée")
+# ── Bloc d'introduction (toujours visible) ────────────────────────────────────
+st.info(
+    "**Comment lire ce tableau de bord ?**  \n"
+    "Ce tableau de bord surveille deux choses :  \n"
+    "- **L'API** : est-ce que le modèle répond correctement et rapidement ?  \n"
+    "- **Les données** : est-ce que les informations envoyées au modèle ont changé par rapport à la normale ?  \n\n"
+    "Si les données changent trop, le modèle risque de faire de mauvaises prédictions — c'est ce qu'on appelle le **data drift**."
+)
 
-c2.metric("Requêtes en échec", f"{error_rate*100:.2f}%")
-c2.caption(f"Part des requêtes qui échouent (≈ {errors_est} erreurs). Seuil: {ALERT_ERROR_RATE*100:.0f}% max.")
+# ══════════════════════════════════════════════════════════════════════════════
+# RÉSUMÉ GLOBAL
+# ══════════════════════════════════════════════════════════════════════════════
+st.header("Résumé global")
 
-c3.metric("Temps de réponse typique (p50)", f"{lat_p50:.1f}" if lat_p50 is not None else "N/A")
-c3.caption("Temps ‘normal’ pour répondre (médiane). Plus bas = mieux")
+psi_ok = True
+n_crit = 0
+n_warn = 0
 
-c4.metric("Temps de réponse élevé (p95)", f"{lat_p95:.1f}" if lat_p95 is not None else "N/A")
-c4.caption(f"95% des requêtes sont plus rapids). Seuil: {ALERT_LAT_P95_MS:.0f} ms max.")
-
-
-# Alertes ops
-st.markdown("### Alertes (Ops)")
-alerts = []
-if error_rate >= ALERT_ERROR_RATE:
-    alerts.append(f"Taux d'erreur élevé: {error_rate*100:.2f}% (seuil {ALERT_ERROR_RATE*100:.0f}%)")
-if lat_p95 is not None and lat_p95 >= ALERT_LAT_P95_MS:
-    alerts.append(f"Latence p95 élevée: {lat_p95:.1f} ms (seuil {ALERT_LAT_P95_MS:.0f} ms)")
-
-if alerts:
-    for a in alerts:
-        st.warning(a)
-else:
-    st.success(" Aucun signal ops critique (selon les seuils actuels).")
-
-
-# --- Drift (PSI) ---
-st.subheader("Changement des données d’entrée ( data drift)")
-
-with st.expander("C’est quoi le drift (PSI) ?"):
-    st.markdown(f"""
-Le **PSI** compare la distribution d'une feature entre une période **référence** et la période **actuelle**
-- **OK** : PSI < {ALERT_PSI_WARN}
-- **A surveiller** : PSI ≥ {ALERT_PSI_WARN}
-- **Critique** : PSI ≥ {ALERT_PSI_CRIT} (risque fort sur le modèle)
-""")
-    
-if not psi_path.exists():
-    st.warning(f"Fichier drift PSI manquant: {psi_path}")
-else:
+if psi_path.exists():
     psi_df = pd.read_csv(psi_path)
-
-    # Classifier drift
-    def level(psi: float) -> str:
-        if pd.isna(psi):
-            return "NA"
-        if psi >= ALERT_PSI_CRIT:
-            return "CRITIQUE"
-        if psi >= ALERT_PSI_WARN:
-            return "WARNING"
-        return "OK"
-
-    psi_df["level"] = psi_df["psi"].apply(level)
-
-    # KPIs drift
-    n_warn = int((psi_df["level"] == "WARNING").sum())
+    psi_df["level"] = psi_df["psi"].apply(psi_level)
     n_crit = int((psi_df["level"] == "CRITIQUE").sum())
+    n_warn = int((psi_df["level"] == "WARNING").sum())
+    psi_ok = n_crit == 0
 
-    d1, d2, d3 = st.columns(3)
-    d1.metric("Features analysées (PSI)", f"{len(psi_df)}")
-    d2.metric("Drift WARNING (PSI>=0.20)", f"{n_warn}")
-    d3.metric("Drift CRITIQUE (PSI>=0.30)", f"{n_crit}")
-    
-    psi_df["Niveau"] = psi_df["level"].map({
-    "OK": "✅ Stable",
-    "WARNING": "🟠 À surveiller",
-    "CRITIQUE": "🔴 Critique",
-    "NA": "—"
-    })
+api_ok = err_rt < ALERT_ERROR_RATE and (lat_p95 is None or lat_p95 < ALERT_LAT_P95_MS)
 
-    if n_crit > 0:
-        st.error("Drift critique détecté sur au moins une feature (PSI>=0.30)")
-    elif n_warn > 0:
-        st.warning("Drift modéré détecté (PSI>=0.20)")
+if api_ok and psi_ok and n_warn == 0:
+    st.success("Tout est normal. Le modèle fonctionne bien et les données sont stables.")
+elif n_crit > 0:
+    st.error(
+        f"Alerte : {n_crit} variable(s) ont changé de façon importante. "
+        "Le modèle pourrait donner de moins bons résultats. Consultez la section Drift ci-dessous."
+    )
+elif n_warn > 0:
+    st.warning(
+        f"Attention : {n_warn} variable(s) ont légèrement changé par rapport à la normale. "
+        "Pas d'urgence, mais à surveiller."
+    )
+elif not api_ok:
+    st.warning("L'API rencontre des lenteurs ou des erreurs. Voir la section Technique ci-dessous.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 1 — DATA DRIFT
+# ══════════════════════════════════════════════════════════════════════════════
+st.header("1 · Les données ont-elles changé ? (Data drift)")
+
+with st.expander("Comprendre le data drift en 30 secondes", expanded=True):
+    st.markdown(
+        """
+Un modèle est entraîné sur des données historiques. Si les nouvelles données lui ressemblent,
+il fait de bonnes prédictions. Si elles ont trop changé, ses prédictions deviennent moins fiables.
+
+**Analogie** : imaginez un médecin formé sur des patients de 20-40 ans.
+Si soudainement il traite surtout des patients de 70 ans, ses réflexes risquent d'être moins adaptés.
+
+| Niveau | Signification | Action suggérée |
+|---|---|---|
+| ✅ Stable | La variable n'a pas changé | Rien à faire |
+| ⚠️ À surveiller | Léger changement détecté | Observer les prochains jours |
+| 🔴 Critique | Changement important | Investiguer et envisager un ré-entraînement |
+"""
+    )
+
+if not psi_path.exists():
+    st.warning("Données de drift non disponibles. Lancez d'abord l'analyse de monitoring.")
+else:
+    # KPIs drift – langage simple
+    total = len(psi_df)
+    n_ok  = total - n_warn - n_crit
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Variables stables", f"{n_ok} / {total}", help="Aucun changement significatif détecté")
+    col2.metric("À surveiller", f"{n_warn}", help="Changement léger — PSI entre 0.20 et 0.30")
+    col3.metric("Changement important", f"{n_crit}", help="Changement fort — PSI > 0.30")
+
+    # Graphique à barres — Top 15 variables les plus dérivées
+    st.subheader("Les 15 variables qui ont le plus changé")
+    st.caption(
+        "Chaque barre montre l'intensité du changement pour une variable. "
+        "Plus la barre est longue, plus la variable a évolué par rapport à la normale."
+    )
+
+    top15 = psi_df.sort_values("psi", ascending=False).head(15).copy()
+    top15["label"] = top15["level"].map(
+        {"OK": "✅ Stable", "WARNING": "⚠️ À surveiller", "CRITIQUE": "🔴 Critique", "NA": "—"}
+    )
+
+    # Couleur simulée via une colonne numérique de seuil
+    chart_df = top15.set_index("feature")[["psi"]].rename(columns={"psi": "Score de changement (PSI)"})
+    st.bar_chart(chart_df)
+
+    # Tableau simplifié
+    st.subheader("Détail par variable")
+    display_df = top15[["feature", "psi", "label"]].copy()
+    display_df.columns = ["Variable", "Score de changement (PSI)", "Niveau"]
+    display_df["Score de changement (PSI)"] = display_df["Score de changement (PSI)"].round(3)
+    display_df = display_df.reset_index(drop=True)
+    st.dataframe(display_df, use_container_width=True, hide_index=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 2 — SANTÉ DE L'API
+# ══════════════════════════════════════════════════════════════════════════════
+st.header("2 · L'API fonctionne-t-elle bien ?")
+st.caption("Cette section vérifie que le modèle répond correctement aux requêtes.")
+
+lat_p50 = ops.get("latency_ms_p50", None)
+errors_est = int(round(err_rt * n_req)) if n_req else 0
+
+a1, a2, a3 = st.columns(3)
+
+a1.metric(
+    "Requêtes reçues",
+    f"{n_req}",
+    help="Nombre total de fois que le modèle a été sollicité sur la période.",
+)
+
+err_delta = None
+if err_rt >= ALERT_ERROR_RATE:
+    err_delta = f"Seuil dépassé ({ALERT_ERROR_RATE*100:.0f}% max)"
+a2.metric(
+    "Taux d'erreur",
+    f"{err_rt*100:.1f}%",
+    delta=err_delta,
+    delta_color="inverse",
+    help=f"Part des requêtes ayant échoué (≈ {errors_est} erreur(s) sur {n_req}).",
+)
+
+lat_display = f"{lat_p95:.0f} ms" if lat_p95 is not None else "N/A"
+lat_delta = None
+if lat_p95 is not None and lat_p95 >= ALERT_LAT_P95_MS:
+    lat_delta = f"Seuil dépassé ({ALERT_LAT_P95_MS:.0f} ms max)"
+a3.metric(
+    "Temps de réponse (95% des requêtes)",
+    lat_display,
+    delta=lat_delta,
+    delta_color="inverse",
+    help="95 % des requêtes sont traitées en moins de cette durée. En dessous de 200 ms, c'est bon.",
+)
+
+if api_ok:
+    st.success("L'API répond correctement et dans les temps.")
+else:
+    if err_rt >= ALERT_ERROR_RATE:
+        st.warning(f"Le taux d'erreur est élevé : {err_rt*100:.1f}% (seuil : {ALERT_ERROR_RATE*100:.0f}%).")
+    if lat_p95 is not None and lat_p95 >= ALERT_LAT_P95_MS:
+        st.warning(f"Le temps de réponse est trop lent : {lat_p95:.0f} ms (seuil : {ALERT_LAT_P95_MS:.0f} ms).")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 3 — RAPPORT EXPERT (replié par défaut)
+# ══════════════════════════════════════════════════════════════════════════════
+with st.expander("Rapport détaillé Evidently (pour les data scientists)"):
+    if html_path.exists():
+        html = html_path.read_text(encoding="utf-8")
+        st.components.v1.html(html, height=900, scrolling=True)
     else:
-        st.success("Pas de drift notable (selon PSI)")
-
-    st.markdown("### Top 15 features par PSI")
-    st.dataframe(psi_df.sort_values("psi", ascending=False).head(15), use_container_width=True)
-
-
-# --- Colonnes exclues ---
-st.subheader("3) Features exclues du drift (qualité / manque de données)")
-if drop_path.exists():
-    drops = read_json(drop_path)
-    st.write("Min non-null requis:", drops.get("min_non_null_required"))
-
-    colA, colB, colC = st.columns(3)
-    colA.write("**Vides en prod**")
-    colA.write(drops.get("dropped_current_empty", []))
-
-    colB.write("**Vides en baseline**")
-    colB.write(drops.get("dropped_reference_empty", []))
-
-    colC.write("**Pas assez de valeurs**")
-    colC.write(drops.get("dropped_too_few_values", []))
-else:
-    st.info("dropped_columns.json non trouvé (ok si tu ne le génères pas).")
-
-
-# --- Evidently report ---
-st.subheader("4) Rapport Evidently")
-if html_path.exists():
-    html = html_path.read_text(encoding="utf-8")
-    st.components.v1.html(html, height=900, scrolling=True)
-else:
-    st.warning(f"Rapport HTML Evidently non trouvé: {html_path}")
-    st.write("Lance d'abord: monitoring/run_monitoring_analysis.py")
+        st.info(
+            "Rapport Evidently non généré.  \n"
+            "Pour le créer : `python monitoring/run_monitoring_analysis.py`"
+        )
