@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -80,6 +81,25 @@ prod_limit   = ops.get("prod_limit_requested")
 date_min     = _fmt_date(ops.get("prod_date_min"))
 date_max     = _fmt_date(ops.get("prod_date_max"))
 
+# Fallback baseline : lire baseline_stats.json si le champ est absent
+if baseline_n is None:
+    stats_path = out_dir.parent / "baseline_stats.json"
+    if stats_path.exists():
+        try:
+            baseline_n = read_json(stats_path).get("n_rows")
+        except Exception:
+            pass
+
+# Fallback période : date de modification d'ops_summary.json
+if date_min == "—" and date_max == "—":
+    try:
+        mtime = os.path.getmtime(ops_path)
+        analysis_date = pd.Timestamp(mtime, unit="s", tz="UTC").strftime("%d/%m/%Y à %H:%M")
+    except Exception:
+        analysis_date = None
+else:
+    analysis_date = None
+
 ctx_left, ctx_right = st.columns(2)
 
 with ctx_left:
@@ -107,8 +127,13 @@ with ctx_right:
         st.metric("Nombre de requêtes reçues", f"{n_req:,}".replace(",", " "))
     if date_min != "—" or date_max != "—":
         st.caption(f"Période couverte : du **{date_min}** au **{date_max}**")
+    elif analysis_date:
+        st.caption(
+            f"Période exacte non disponible. Analyse générée le **{analysis_date}**.  \n"
+            "Relancez `run_monitoring_analysis.py` pour voir les dates précises."
+        )
     else:
-        st.caption("Période : information non disponible (relancez l'analyse de monitoring)")
+        st.caption("Période non disponible — relancez l'analyse de monitoring.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # RÉSUMÉ GLOBAL
