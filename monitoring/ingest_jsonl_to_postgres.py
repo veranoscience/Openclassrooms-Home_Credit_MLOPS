@@ -44,14 +44,16 @@ def ingest_predictions(conn: psycopg.Connection, pred_path: Path) -> int:
         latency_ms, status_code,
         proba, prediction, decision,
         missing_rate, missing_count, n_features_sent, payload_hash,
-        top_features, input_json, output_json
+        top_features, input_json, output_json,
+        hash_ms, preprocessing_ms, stats_ms, inference_ms, logging_ms
     ) VALUES (
         %(request_id)s, %(ts)s, %(client_id)s, %(model_name)s, %(model_version)s,
         %(threshold)s, %(fn_cost)s, %(fp_cost)s,
         %(latency_ms)s, %(status_code)s,
         %(proba)s, %(prediction)s, %(decision)s,
         %(missing_rate)s, %(missing_count)s, %(n_features_sent)s, %(payload_hash)s,
-        %(top_features)s, %(input_json)s, %(output_json)s
+        %(top_features)s, %(input_json)s, %(output_json)s,
+        %(hash_ms)s, %(preprocessing_ms)s, %(stats_ms)s, %(inference_ms)s, %(logging_ms)s
     )
     ON CONFLICT (request_id) DO NOTHING;
     """
@@ -61,6 +63,7 @@ def ingest_predictions(conn: psycopg.Connection, pred_path: Path) -> int:
         for rec in iter_jsonl(pred_path):
             inp = rec.get("input", {}) or {}
             out = rec.get("output", {}) or {}
+            tim = rec.get("timings", {}) or {}
 
             top = inp.get("top_features")
 
@@ -92,6 +95,12 @@ def ingest_predictions(conn: psycopg.Connection, pred_path: Path) -> int:
                 "top_features": top_json,
                 "input_json": Json(inp),
                 "output_json": Json(out),
+
+                "hash_ms": tim.get("hash_ms"),
+                "preprocessing_ms": tim.get("preprocessing_ms"),
+                "stats_ms": tim.get("stats_ms"),
+                "inference_ms": tim.get("inference_ms"),
+                "logging_ms": tim.get("logging_ms"),
             }
 
             cur.execute(sql, row)

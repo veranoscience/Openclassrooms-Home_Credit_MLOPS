@@ -26,6 +26,9 @@ dev = [
   "jupyter>=1.1.1",
   "ipykernel>=6.29.5",
   "httpx>=0.28.1",
+  "psycopg[binary]>=3.3.2",
+  "evidently>=0.7.20",
+  "streamlit>=1.54.0",
 ]
 [tool.hatch.build.targets.wheel]
 packages = ["src/app"]
