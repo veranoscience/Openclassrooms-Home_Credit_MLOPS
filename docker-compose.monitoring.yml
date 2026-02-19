@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: homecredit-postgres
+    environment:
+      POSTGRES_USER: homecredit
+      POSTGRES_PASSWORD: homecredit
+      POSTGRES_DB: monitoring
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata_homecredit:/var/lib/postgresql/data
+
+volumes:
+  pgdata_homecredit:
