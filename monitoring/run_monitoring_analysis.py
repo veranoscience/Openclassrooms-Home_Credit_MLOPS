@@ -263,7 +263,7 @@ def main() -> None:
     # --- Evidently report (HTML + JSON) ---
     report = Report([DataDriftPreset()])
 
-    # Evidently 0.7.x: report.run(...) retourne l’objet "my_report" qui a save_html/save_json
+
     try:
         my_report = report.run(reference_data=baseline_top[valid_cols], current_data=prod_top[valid_cols])
     except TypeError:
@@ -272,7 +272,7 @@ def main() -> None:
     my_report.save_html(str(out_dir / "evidently_drift_report.html"))
     my_report.save_json(str(out_dir / "evidently_drift_report.json"))
 
-    print("✅ Monitoring outputs écrits dans:", out_dir)
+    print(" Monitoring outputs écrits dans:", out_dir)
     print(" - ops_summary.json")
     print(" - dropped_columns.json")
     print(" - drift_psi.csv")

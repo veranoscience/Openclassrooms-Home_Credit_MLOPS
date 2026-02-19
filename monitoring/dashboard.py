@@ -55,8 +55,7 @@ st.title("Surveillance du modèle de scoring – Home Credit")
 
 # ── Bloc d'introduction (toujours visible) ────────────────────────────────────
 st.info(
-    "**Comment lire ce tableau de bord ?**  \n"
-    "Ce tableau de bord surveille deux choses :  \n"
+    "**Ce tableau de bord surveille deux choses :**  \n"
     "- **L'API** : est-ce que le modèle répond correctement et rapidement ?  \n"
     "- **Les données** : est-ce que les informations envoyées au modèle ont changé par rapport à la normale ?  \n\n"
     "Si les données changent trop, le modèle risque de faire de mauvaises prédictions — c'est ce qu'on appelle le **data drift**."
@@ -118,7 +117,7 @@ with ctx_right:
     st.markdown("**Données actuelles (APRÈS — production)**")
     st.markdown(
         "Ce sont les vraies demandes de crédit reçues par le modèle en production, "
-        "sur la période ci-dessous."
+        "sur la période ci-dessous"
     )
     if prod_n is not None:
         limit_note = f" (max {prod_limit:,} demandées)".replace(",", " ") if prod_limit else ""
@@ -130,10 +129,10 @@ with ctx_right:
     elif analysis_date:
         st.caption(
             f"Période exacte non disponible. Analyse générée le **{analysis_date}**.  \n"
-            "Relancez `run_monitoring_analysis.py` pour voir les dates précises."
+            "Relancez `run_monitoring_analysis.py` pour voir les dates précises"
         )
     else:
-        st.caption("Période non disponible — relancez l'analyse de monitoring.")
+        st.caption("Période non disponible — relancez l'analyse de monitoring")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # RÉSUMÉ GLOBAL
@@ -158,7 +157,7 @@ if api_ok and psi_ok and n_warn == 0:
 elif n_crit > 0:
     st.error(
         f"Alerte : {n_crit} variable(s) ont changé de façon importante. "
-        "Le modèle pourrait donner de moins bons résultats. Consultez la section Drift ci-dessous."
+        "Le modèle pourrait donner de moins bons résultats"
     )
 elif n_warn > 0:
     st.warning(
@@ -166,7 +165,7 @@ elif n_warn > 0:
         "Pas d'urgence, mais à surveiller."
     )
 elif not api_ok:
-    st.warning("L'API rencontre des lenteurs ou des erreurs. Voir la section Technique ci-dessous.")
+    st.warning("L'API rencontre des lenteurs ou des erreurs")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -174,14 +173,11 @@ elif not api_ok:
 # ══════════════════════════════════════════════════════════════════════════════
 st.header("1 · Les données ont-elles changé ? (Data drift)")
 
-with st.expander("Comprendre le data drift en 30 secondes", expanded=True):
+with st.expander("Explication de data drift", expanded=True):
     st.markdown(
         """
 Un modèle est entraîné sur des données historiques. Si les nouvelles données lui ressemblent,
 il fait de bonnes prédictions. Si elles ont trop changé, ses prédictions deviennent moins fiables.
-
-**Analogie** : imaginez un médecin formé sur des patients de 20-40 ans.
-Si soudainement il traite surtout des patients de 70 ans, ses réflexes risquent d'être moins adaptés.
 
 | Niveau | Signification | Action suggérée |
 |---|---|---|
@@ -192,7 +188,7 @@ Si soudainement il traite surtout des patients de 70 ans, ses réflexes risquent
     )
 
 if not psi_path.exists():
-    st.warning("Données de drift non disponibles. Lancez d'abord l'analyse de monitoring.")
+    st.warning("Données de drift non disponibles. Lancez d'abord l'analyse de monitoring")
 else:
     # KPIs drift – langage simple
     total = len(psi_df)
@@ -206,8 +202,8 @@ else:
     # Graphique à barres — Top 15 variables les plus dérivées
     st.subheader("Les 15 variables qui ont le plus changé")
     st.caption(
-        "Chaque barre montre l'intensité du changement pour une variable. "
-        "Plus la barre est longue, plus la variable a évolué par rapport à la normale."
+        "Chaque barre montre l'intensité du changement pour une variable "
+        "Plus la barre est longue, plus la variable a évolué par rapport à la normale"
     )
 
     top15 = psi_df.sort_values("psi", ascending=False).head(15).copy()
@@ -242,7 +238,7 @@ a1, a2, a3 = st.columns(3)
 a1.metric(
     "Requêtes reçues",
     f"{n_req}",
-    help="Nombre total de fois que le modèle a été sollicité sur la période.",
+    help="Nombre total de fois que le modèle a été sollicité sur la période",
 )
 
 err_delta = None
@@ -253,7 +249,7 @@ a2.metric(
     f"{err_rt*100:.1f}%",
     delta=err_delta,
     delta_color="inverse",
-    help=f"Part des requêtes ayant échoué (≈ {errors_est} erreur(s) sur {n_req}).",
+    help=f"Part des requêtes ayant échoué (≈ {errors_est} erreur(s) sur {n_req})",
 )
 
 lat_display = f"{lat_p95:.0f} ms" if lat_p95 is not None else "N/A"
@@ -265,22 +261,22 @@ a3.metric(
     lat_display,
     delta=lat_delta,
     delta_color="inverse",
-    help="95 % des requêtes sont traitées en moins de cette durée. En dessous de 200 ms, c'est bon.",
+    help="95 % des requêtes sont traitées en moins de cette durée. En dessous de 200 ms, c'est bon",
 )
 
 if api_ok:
-    st.success("L'API répond correctement et dans les temps.")
+    st.success("L'API répond correctement et dans les temps")
 else:
     if err_rt >= ALERT_ERROR_RATE:
-        st.warning(f"Le taux d'erreur est élevé : {err_rt*100:.1f}% (seuil : {ALERT_ERROR_RATE*100:.0f}%).")
+        st.warning(f"Le taux d'erreur est élevé : {err_rt*100:.1f}% (seuil : {ALERT_ERROR_RATE*100:.0f}%)")
     if lat_p95 is not None and lat_p95 >= ALERT_LAT_P95_MS:
-        st.warning(f"Le temps de réponse est trop lent : {lat_p95:.0f} ms (seuil : {ALERT_LAT_P95_MS:.0f} ms).")
+        st.warning(f"Le temps de réponse est trop lent : {lat_p95:.0f} ms (seuil : {ALERT_LAT_P95_MS:.0f} ms)")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# SECTION 3 — RAPPORT EXPERT (replié par défaut)
+# SECTION 3 — RAPPORT EXPERT 
 # ══════════════════════════════════════════════════════════════════════════════
-with st.expander("Rapport détaillé Evidently (pour les data scientists)"):
+with st.expander("Rapport détaillé Evidently"):
     if html_path.exists():
         html = html_path.read_text(encoding="utf-8")
         st.components.v1.html(html, height=900, scrolling=True)
