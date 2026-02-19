@@ -1,0 +1,48 @@
+         34575001 function calls (34322001 primitive calls) in 17.566 seconds
+
+   Ordered by: cumulative time
+   List reduced from 642 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.006    0.000   16.791    0.017 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/pipeline.py:815(predict_proba)
+5000/1000    0.032    0.000   15.939    0.016 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_set_output.py:314(wrapped)
+     1000    0.168    0.000   15.917    0.016 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/compose/_column_transformer.py:1031(transform)
+     1000    0.018    0.000   15.183    0.015 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/compose/_column_transformer.py:829(_call_func_on_transformers)
+     1000    0.003    0.000   13.862    0.014 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py:54(__call__)
+     1000    0.007    0.000   13.856    0.014 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/joblib/parallel.py:1969(__call__)
+     4000    0.012    0.000   13.823    0.003 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/joblib/parallel.py:1888(_get_sequential_output)
+     2000    0.070    0.000   13.803    0.007 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py:140(__call__)
+     2000    0.007    0.000   13.585    0.007 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/pipeline.py:1442(_transform_one)
+     2000    0.023    0.000   13.562    0.007 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/pipeline.py:1002(transform)
+    26000    0.349    0.000    9.318    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:725(check_array)
+     2000    0.058    0.000    8.995    0.004 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:595(transform)
+     4000    0.029    0.000    8.859    0.002 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:2793(validate_data)
+     2000    0.013    0.000    8.759    0.004 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:330(_validate_input)
+    13000    0.101    0.000    5.463    0.000 {built-in method builtins.any}
+   514000    0.170    0.000    5.348    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:894(<genexpr>)
+   512000    1.204    0.000    5.178    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:681(_pandas_dtype_needs_early_conversion)
+     1000    0.024    0.000    3.917    0.004 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/preprocessing/_encoders.py:1008(transform)
+     1000    0.081    0.000    3.729    0.004 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/preprocessing/_encoders.py:193(_transform)
+ 10310000    1.818    0.000    2.802    0.000 {built-in method builtins.isinstance}
+    24000    0.097    0.000    1.855    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_indexing.py:265(_safe_indexing)
+  1556000    1.071    0.000    1.712    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+3354000/3353000    0.571    0.000    1.667    0.000 {built-in method builtins.hasattr}
+   512000    0.560    0.000    1.617    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/dtypes/common.py:1200(is_bool_dtype)
+     1000    0.036    0.000    1.575    0.002 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/preprocessing/_encoders.py:39(_check_X)
+    16000    0.038    0.000    1.446    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6454(dtypes)
+    18000    0.196    0.000    1.392    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/series.py:392(__init__)
+     2000    0.007    0.000    1.093    0.001 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_indexing.py:66(_pandas_indexing)
+     2000    0.011    0.000    1.071    0.001 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/indexing.py:1177(__getitem__)
+     2000    0.012    0.000    1.029    0.001 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/indexing.py:1366(_getitem_tuple)
+    22000    0.036    0.000    0.968    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_encode.py:197(_encode)
+     2000    0.011    0.000    0.953    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/indexing.py:1005(_getitem_tuple_same_dim)
+     2000    0.010    0.000    0.936    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/indexing.py:1398(_getitem_axis)
+     2000    0.005    0.000    0.903    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/indexing.py:1335(_getitem_iterable)
+11000/8000    0.022    0.000    0.894    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/validation.py:1621(check_is_fitted)
+    22000    0.141    0.000    0.858    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_encode.py:240(_check_unknown)
+     1000    0.532    0.001    0.829    0.001 /Users/kseniadautel/projet_mlops/monitoring/profile_inference.py:24(make_df_fast)
+41000/15000    0.028    0.000    0.827    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_tags.py:250(get_tags)
+    22000    0.103    0.000    0.792    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/sklearn/utils/_encode.py:164(_map_to_integer)
+     8000    0.008    0.000    0.779    0.000 /Users/kseniadautel/projet_mlops/.venv/lib/python3.13/site-packages/pandas/core/accessor.py:220(__get__)
+
+

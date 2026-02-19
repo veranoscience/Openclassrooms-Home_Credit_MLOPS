@@ -1,3 +1,4 @@
+
 from __future__ import annotations
 
 import hashlib
@@ -8,7 +9,7 @@ import uuid
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import joblib
 import numpy as np
@@ -44,6 +45,8 @@ MODEL_VERSION = os.getenv("MODEL_VERSION", None)
 model = None
 feature_cols: List[str] = []
 feature_set: set[str] = set()
+feature_index: Dict [str, int] = {}
+top_feature_indices: Dict[str, int] = {}
 
 top_features: List[str] = []
 
@@ -81,12 +84,12 @@ def to_jsonable(v: Any) -> Any:
     return v
 
 
-def make_row_df(payload: Dict[str, Any]) -> pd.DataFrame:
+def make_row_df(payload: Dict[str, Any]) -> tuple[pd.DataFrame, np.ndarray, int]:
     """
-    - bloque les features inconnues
-    - complète les manquantes par None
-    - aligne l'ordre des colonnes (feature_cols)
-    - nettoie inf/-inf -> NaN
+    - refuse les features inconnues
+    - construit un vecteur numpy array float32 de taille (1, n_features)
+    - valeurs manquantes -> NaN
+    - reture (df, x, missiong_count)
     """
     unknown = sorted(set(payload.keys()) - feature_set)
     if unknown:
@@ -99,11 +102,22 @@ def make_row_df(payload: Dict[str, Any]) -> pd.DataFrame:
             },
         )
 
-    row = {c: payload.get(c, None) for c in feature_cols}
-    df = pd.DataFrame([row], columns=feature_cols)
+    x = np.full((1, len(feature_cols)), np.nan, dtype=np.float32)
 
-    df = df.replace([np.inf, -np.inf], np.nan)
-    return df
+    for k, v in payload.items():
+        i = feature_index.get(k)
+        if i is None or v is None:
+            continue
+        try:
+            fv = float(v)
+        except Exception:
+            continue
+        if np.isfinite(fv):
+            x[0,i] = fv
+
+    missing_count = int(np.isnan(x).sum())
+    df = pd.DataFrame(x, columns=feature_cols)
+    return df, x, missing_count
 
 
 def compute_payload_hash(features: Dict[str, Any]) -> str:
@@ -116,7 +130,7 @@ def compute_payload_hash(features: Dict[str, Any]) -> str:
 # -----------------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global model, feature_cols, feature_set, threshold, fn_cost, fp_cost, top_features
+    global model, feature_cols, feature_set, threshold, fn_cost, fp_cost, top_features, feature_index, top_feature_indices
 
     # features attendues
     feature_cols = load_json(FEATURE_COLS_PATH)
@@ -139,6 +153,9 @@ async def lifespan(app: FastAPI):
             top_features = []
     else:
         top_features = []
+
+    feature_index = {c: i for i, c in enumerate(feature_cols)}
+    top_feature_indices = {f: feature_index[f] for f in top_features if f in feature_index}
 
     # model
     if not MODEL_PATH.exists():
@@ -204,22 +221,24 @@ def predict(req: PredictRequest) -> PredictResponse:
     try:
         # Etape 2: Validation + construction DataFrame
         t0 = time.perf_counter()
-        X_one = make_row_df(features)
+        df, x_arr, missing_count = make_row_df(features)
+
         timing_preprocessing_ms = (time.perf_counter() - t0) * 1000
 
         # Etape 3: Stats missing + top features
         t0 = time.perf_counter()
-        missing_count = int(pd.isna(X_one.iloc[0]).sum())
         missing_rate = float(missing_count / len(feature_cols)) if feature_cols else None
 
-        # top features values (aligné sur X_one)
-        row0 = X_one.iloc[0].to_dict()
-        top_features_values = {f: to_jsonable(row0.get(f)) for f in top_features}
+        # top features values
+        top_features_values = {
+            f: to_jsonable(x_arr[0, idx]) for f, idx in top_feature_indices.items()
+            }
+
         timing_stats_ms = (time.perf_counter() - t0) * 1000
 
         # Etape 4: Inférence modèle
         t0 = time.perf_counter()
-        proba = float(model.predict_proba(X_one)[:, 1][0])
+        proba = float(model.predict_proba(df)[:, 1][0])
         pred = int(proba >= threshold)
         decision = "Refusé" if pred == 1 else "Accepté"
         timing_inference_ms = (time.perf_counter() - t0) * 1000
