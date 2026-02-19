@@ -1,12 +1,32 @@
+---
+title: Home Credit — MLOps Scoring API
+sdk: docker
+app_port: 8000
+emoji: 🚀
+colorFrom: blue
+colorTo: red
+license: mit
+pinned: false
+tags:
+  - mlops
+  - fastapi
+  - docker
+  - xgboost
+  - credit-scoring
+  - monitoring
+  - mlflow
+---
 # Home Credit — MLOps Scoring API (FastAPI + Docker + CI/CD)
 
-Ce dépôt contient une solution MLOps de bout en bout pour un modèle de scoring crédit :
+Sommaire:
 - **tracking & registry MLflow** (expérimentations + modèle final versionné),
 - **API FastAPI** exposant une prédiction de probabilité de défaut,
 - **tests automatisés (pytest)**,
 - **conteneurisation Docker**,
 - **CI/CD GitHub Actions** (tests + build Docker + déploiement sur Hugging Face Spaces),
-- (à venir ) **monitoring & data drift**.
+- **Monitoring (logs JSONL + Postgres) & data drift (PSI / Evidently)**,
+- **Profiling cProfile + optimisation preprocessing (NumPy → DataFrame)**
+
 
 ---
 
@@ -16,34 +36,34 @@ Ce dépôt contient une solution MLOps de bout en bout pour un modèle de scorin
 - [Installation (local)](#installation-local)
 - [Lancer l’API (local)](#lancer-lapi-local)
 - [Utiliser l’API](#utiliser-lapi)
+- [Démo HF](#demo_hf)
 - [Tests](#tests)
 - [Docker](#docker)
 - [CI/CD](#cicd)
 - [Artefacts du modèle](#artefacts-du-modèle)
 - [Conventions & décisions](#conventions--décisions)
-- [À faire / Roadmap](#à-faire--roadmap)
+- [Optimisation performance](#optimisation)
+
 
 ---
 
 ## Architecture
+
+```text
 .
 ├── src/
-│ └── app/
-│ ├── main.py 
-│ ├── schemas.py 
-│ └── artifacts/
-│ ├── model.pkl
-│ ├── feature_cols.json
-│ └── threshold_config.json
 ├── tests/
-│ ├── test_health.py
-│ ├── test_predict.py
-│ └── sample_payload.json
 ├── notebooks/ 
+├── monitoring/
+├── prod_logs
 ├── Dockerfile
+├── docker-compose.monitoring.yml
 ├── pyproject.toml 
 ├── uv.lock
-└── .github/workflows/ci-cd.yml 
+├── .github/workflows/
+├── README.md
+├── reports
+├── requirements.txt
 
 ---
 
@@ -83,6 +103,22 @@ Endpoints
 - GET /metadata : informations modèle + seuil
 
 - POST /predict : prédiction d’un client
+
+---
+## Démo HF
+
+Base URL : `https://<HF_USERNAME>-<HF_SPACE_NAME>.hf.space`
+
+Exemples :
+
+```
+curl -s https://<HF_USERNAME>-<HF_SPACE_NAME>.hf.space/health
+curl -s https://<HF_USERNAME>-<HF_SPACE_NAME>.hf.space/metadata
+
+curl -s -X POST https://<HF_USERNAME>-<HF_SPACE_NAME>.hf.space/predict \
+  -H "Content-Type: application/json" \
+  --data @tests/sample_payload.json
+```
 
 ---
 
@@ -173,14 +209,19 @@ Le modèle est chargé une seule fois au démarrage de l’API, puis réutilisé
 
 ---
 
-##À faire
+## Optimisation performance
 
- Stockage des logs de production (inputs/outputs/latence)
+```md
 
- Dashboard de monitoring (distribution scores, latence, taux erreur)
+Avant optimisation :
+- mean ~ 13.76 ms, p95 ~ 15.99 ms
+- preprocessing p95 ~ 6.28 ms
 
- Détection de data drift (PSI / KS) sur features clés + alerting
+Après optimisation preprocessing (NumPy → DataFrame) :
+- mean ~ 8.09 ms, p95 ~ 9.94 ms
+- preprocessing p95 ~ 0.64 ms
+- inference p95 ~ 6.41 ms (bottleneck restant)
 
- Endpoint batch /predict_batch
 
- Sécurité minimale (API key / rate limit)
+
+
