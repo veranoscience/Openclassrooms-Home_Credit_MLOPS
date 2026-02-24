@@ -51,18 +51,24 @@ err_rt = ops.get("error_rate", 0.0) or 0.0
 lat_p95 = ops.get("latency_ms_p95", None)
 
 # ── Titre ─────────────────────────────────────────────────────────────────────
-st.title("Surveillance du modèle de scoring – Home Credit")
+st.title(" Rapport de surveillance du modèle de scoring – Home Credit \n"
+          )
 
-# ── Bloc d'introduction (toujours visible) ────────────────────────────────────
+# ── Bloc d'introduction ────────────────────────────────────
+st.subheader ("Contexte\n"
+              "**Date de génération:** 19/02/2026  \n"
+              "**Modèle surveillé:** XGBoost -  Scoring risque de défaut de paiment \n")
 st.info(
-    "**Ce tableau de bord surveille deux choses :**  \n"
-    "- **L'API** : est-ce que le modèle répond correctement et rapidement ?  \n"
-    "- **Les données** : est-ce que les informations envoyées au modèle ont changé par rapport à la normale ?  \n\n"
-    "Si les données changent trop, le modèle risque de faire de mauvaises prédictions — c'est ce qu'on appelle le **data drift**."
+
+    "Home Credit distribue des prêts à la consommation et utilise un modèle de scoring pour estimer la probabilité qu'un client ne rembourse pas son crédit. \n" 
+    "Ce rapport vérifie deux choses :\n"
+    "- **Les données** : est-ce que les données reçues en production restent proches des données d'entraînement **(data drift)**?  \n"
+    "- **L'API** : est-ce que le modèle répond correctement et rapidement **(monitoring opérationnel)** ?  \n"
+    "L'analyse est générée automatiquement via un script Python combinant calcul de PSI, distance de Wasserstein, et le framework Evidently"
 )
 
 # ── Carte : Contexte de l'analyse ─────────────────────────────────────────────
-st.subheader("Sur quelles données porte cette analyse ?")
+st.header("1. Jeux de données analysés")
 
 def _fmt_date(iso: str | None) -> str:
     """Convertit une date ISO en format lisible (JJ/MM/AAAA HH:MM)."""
@@ -102,10 +108,10 @@ else:
 ctx_left, ctx_right = st.columns(2)
 
 with ctx_left:
-    st.markdown("**Données de référence (AVANT)**")
+    st.markdown("**Données de référence (baseline)**")
     st.markdown(
         "Ce sont les données sur lesquelles le modèle a été entraîné. "
-        "Elles servent de point de comparaison — ce à quoi les données « normales » ressemblent."
+        "Elles servent de point de comparaison "
     )
     if baseline_n is not None:
         st.metric("Nombre de lignes", f"{baseline_n:,}".replace(",", " "))
@@ -114,10 +120,10 @@ with ctx_left:
     st.caption(f"Source : `{Path(baseline_src).name}`")
 
 with ctx_right:
-    st.markdown("**Données actuelles (APRÈS — production)**")
+    st.markdown("**Données actuelles (production)**")
     st.markdown(
-        "Ce sont les vraies demandes de crédit reçues par le modèle en production, "
-        "sur la période ci-dessous"
+        "Ce sont les vraies demandes de crédit reçues par le modèle en production "
+       
     )
     if prod_n is not None:
         limit_note = f" (max {prod_limit:,} demandées)".replace(",", " ") if prod_limit else ""
@@ -128,16 +134,16 @@ with ctx_right:
         st.caption(f"Période couverte : du **{date_min}** au **{date_max}**")
     elif analysis_date:
         st.caption(
-            f"Période exacte non disponible. Analyse générée le **{analysis_date}**.  \n"
-            "Relancez `run_monitoring_analysis.py` pour voir les dates précises"
+            f"Analyse générée le **{analysis_date}**.  \n"
+            "Source `run_monitoring_analysis.py`"
         )
     else:
         st.caption("Période non disponible — relancez l'analyse de monitoring")
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RÉSUMÉ GLOBAL
+# RÉSUMÉ Exécutif
 # ══════════════════════════════════════════════════════════════════════════════
-st.header("Résumé global")
+st.header(" 2. Résumé global")
 
 psi_ok = True
 n_crit = 0
@@ -171,7 +177,7 @@ elif not api_ok:
 # ══════════════════════════════════════════════════════════════════════════════
 # SECTION 1 — DATA DRIFT
 # ══════════════════════════════════════════════════════════════════════════════
-st.header("1 · Les données ont-elles changé ? (Data drift)")
+st.header("3. Analyse de la derive des données (data drift) ")
 
 with st.expander("Explication de data drift", expanded=True):
     st.markdown(
@@ -199,25 +205,25 @@ else:
     col2.metric("À surveiller", f"{n_warn}", help="Changement léger — PSI entre 0.20 et 0.30")
     col3.metric("Changement important", f"{n_crit}", help="Changement fort — PSI > 0.30")
 
-    # Graphique à barres — Top 15 variables les plus dérivées
-    st.subheader("Les 15 variables qui ont le plus changé")
+    # Graphique à barres — Top 10 variables les plus dérivées
+    st.subheader("3.1 Top 10 variables les plus impactées")
     st.caption(
         "Chaque barre montre l'intensité du changement pour une variable "
         "Plus la barre est longue, plus la variable a évolué par rapport à la normale"
     )
 
-    top15 = psi_df.sort_values("psi", ascending=False).head(15).copy()
-    top15["label"] = top15["level"].map(
+    top10 = psi_df.sort_values("psi", ascending=False).head(10).copy()
+    top10["label"] = top10["level"].map(
         {"OK": "✅ Stable", "WARNING": "⚠️ À surveiller", "CRITIQUE": "🔴 Critique", "NA": "—"}
     )
 
     # Couleur simulée via une colonne numérique de seuil
-    chart_df = top15.set_index("feature")[["psi"]].rename(columns={"psi": "Score de changement (PSI)"})
+    chart_df = top10.set_index("feature")[["psi"]].rename(columns={"psi": "Score de changement (PSI)"})
     st.bar_chart(chart_df)
 
     # Tableau simplifié
-    st.subheader("Détail par variable")
-    display_df = top15[["feature", "psi", "label"]].copy()
+    st.subheader("3.2 Détail par variable")
+    display_df = top10[["feature", "psi", "label"]].copy()
     display_df.columns = ["Variable", "Score de changement (PSI)", "Niveau"]
     display_df["Score de changement (PSI)"] = display_df["Score de changement (PSI)"].round(3)
     display_df = display_df.reset_index(drop=True)
@@ -227,8 +233,8 @@ else:
 # ══════════════════════════════════════════════════════════════════════════════
 # SECTION 2 — SANTÉ DE L'API
 # ══════════════════════════════════════════════════════════════════════════════
-st.header("2 · L'API fonctionne-t-elle bien ?")
-st.caption("Cette section vérifie que le modèle répond correctement aux requêtes.")
+st.header("4. Monitoring opérationnel de l'API")
+st.caption("Cette section vérifie que le modèle répond correctement aux requêtes")
 
 lat_p50 = ops.get("latency_ms_p50", None)
 errors_est = int(round(err_rt * n_req)) if n_req else 0
