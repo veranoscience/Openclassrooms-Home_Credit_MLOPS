@@ -54,6 +54,15 @@ threshold: float = 0.5
 fn_cost: Optional[float] = None
 fp_cost: Optional[float] = None
 
+@app.get("/", include_in_schema=False)
+def root():
+    return {
+        "message": "Home Credit Scoring API",
+        "docs": "/docs",
+        "health": "/health",
+        "metadata": "/metadata",
+        "predict": "/predict"
+    }
 
 # -----------------------
 # Utils
